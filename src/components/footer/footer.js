@@ -39,15 +39,12 @@ const Footer = () => {
           <div className="footer__title">FOLLOW US</div>
 
           <div className="footer-info__network">
-            <img src="" alt="" />
             <a href="">FACEBOOK</a>
           </div>
           <div className="footer-info__network">
-            <img src="" alt="" />
-            <a href="">ODNOKLASSNIKI</a>
+            <a href="">TWITTER</a>
           </div>
           <div className="footer-info__network">
-            <img src="" alt="" />
             <a href="">INSTAGRAM</a>
           </div>
         </div>
