@@ -5,21 +5,27 @@ const Header = () => {
   return (
     <div>
       <div className={styles.header}>
-        <a href=""> NEW ARRIVALS</a>
+        <div className={styles.header_left}>
+          <a href=""> NEW ARRIVALS</a>
 
-        <a href="">SHOP</a>
+          <a href="">SHOP</a>
 
-        <a href="">COLLECTIONS</a>
-
-        <a className={styles.logo} href="">
+          <a href="">COLLECTIONS</a>
+        </div>
+        <div className={styles.logo} href="">
           MODNIKKY
-        </a>
+        </div>
+        <div className={styles.header_right}>
+          <input
+            className={styles.header_right__search}
+            type="text"
+            placeholder="SEARCH"
+          />
 
-        <input type="text" placeholder="SEARCH" />
+          <a href="">SIGN IN</a>
 
-        <a href="">SIGN IN</a>
-
-        <a href="">BAG (2)</a>
+          <a href="">BAG (2)</a>
+        </div>
       </div>
     </div>
   );

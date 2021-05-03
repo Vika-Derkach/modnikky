@@ -1,0 +1,64 @@
+.footer {
+  padding-top: 8rem;
+  padding-bottom: 7.5rem;
+}
+.footer-text {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.footer-text .footer-text__title {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.04em;
+  color: #000f08;
+  margin-bottom: 1rem;
+}
+.footer-text .footer-text__desc {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1rem;
+  margin-bottom: 3rem;
+}
+.footer-text__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-text__form .footer-text__form_input {
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  border-radius: 5px;
+  letter-spacing: 0.04em;
+  color: #8c8c8c;
+}
+.footer-text__form .footer-text__form_button {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.04em;
+  color: #000f08;
+  border: none;
+  margin: 5px 2px;
+  background-color: #fff;
+}
+.footer-text__form .footer-text__form_button:hover {
+  border: 1px black solid;
+}
+.footer-col {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #000f08;
+}
+.footer-col div {
+  display: flex;
+  flex-direction: column;
+}
+.footer-col .footer__title {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.04em;
+}
