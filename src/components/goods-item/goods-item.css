@@ -1,0 +1,12 @@
+.goods-item-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+.good-item {
+  width: 30%;
+}
+.good-item img {
+  width: 100%;
+}
