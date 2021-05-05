@@ -41,18 +41,19 @@ const Footer = () => {
           <div className="footer-info__network">
             <a href="">
               {" "}
-              <i class="fa fa-facebook-square" aria-hidden="true"></i> FACEBOOK
+              <i className="fa fa-facebook-square" aria-hidden="true"></i>{" "}
+              FACEBOOK
             </a>
           </div>
           <div className="footer-info__network">
             <a href="">
               {" "}
-              <i class="fa fa-twitter" aria-hidden="true"></i> TWITTER
+              <i className="fa fa-twitter" aria-hidden="true"></i> TWITTER
             </a>
           </div>
           <div className="footer-info__network">
             <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i> INSTAGRAM
+              <i className="fa fa-instagram" aria-hidden="true"></i> INSTAGRAM
             </a>
           </div>
         </div>

@@ -4,8 +4,10 @@ import ErrorBoundry from "../error-boundry";
 import ErrorIndicator from "../error-indicator";
 import Footer from "../footer";
 import Header from "../header";
+import { withModnikkyService } from "../hoc";
 import Spinner from "../spinner";
-const App = () => {
+const App = ({ modnikkyService }) => {
+  console.log(modnikkyService.getClothes());
   return (
     <div>
       <ErrorBoundry>
@@ -19,4 +21,4 @@ const App = () => {
     </div>
   );
 };
-export default App;
+export default withModnikkyService()(App);
