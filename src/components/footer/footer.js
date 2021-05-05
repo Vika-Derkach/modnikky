@@ -39,18 +39,26 @@ const Footer = () => {
           <div className="footer__title">FOLLOW US</div>
 
           <div className="footer-info__network">
-            <a href="">FACEBOOK</a>
+            <a href="">
+              {" "}
+              <i class="fa fa-facebook-square" aria-hidden="true"></i> FACEBOOK
+            </a>
           </div>
           <div className="footer-info__network">
-            <a href="">TWITTER</a>
+            <a href="">
+              {" "}
+              <i class="fa fa-twitter" aria-hidden="true"></i> TWITTER
+            </a>
           </div>
           <div className="footer-info__network">
-            <a href="">INSTAGRAM</a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i> INSTAGRAM
+            </a>
           </div>
         </div>
         <div className="footer-contact">
           <div className="footer__title">CONTACT US</div>
-          <a href="">hello@modnikky.com</a>
+          <a href="queenviktoriyphp@gmail.com">hello@modnikky.com</a>
           <a href="">+380974422337</a>
           <a href="">
             Visit us at Kurbasa 7, <br /> Ternopil, Ukraine

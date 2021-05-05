@@ -1,16 +1,17 @@
 import React from "react";
+import CatalogPage from "../catalog-page";
 import ErrorBoundry from "../error-boundry";
 import ErrorIndicator from "../error-indicator";
 import Footer from "../footer";
 import Header from "../header";
-import HomePage from "../home-page";
 import Spinner from "../spinner";
 const App = () => {
   return (
     <div>
       <ErrorBoundry>
         <Header />
-        <HomePage />
+
+        <CatalogPage />
         <ErrorIndicator />
         <Spinner />
         <Footer />

@@ -1,0 +1,11 @@
+.catalog-page-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.catalog-page-container .catalog-page-categories {
+  width: 15%;
+}
+.catalog-page-container .catalog-page-goods {
+  width: 79%;
+}
