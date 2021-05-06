@@ -1,0 +1,9 @@
+.customer-service {
+  width: 70%;
+}
+.customer-service__title {
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: #000000;
+}

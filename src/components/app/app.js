@@ -1,5 +1,5 @@
 import React from "react";
-import Bag from "../bag";
+import CustomerServicePage from "../customer-service-page";
 import ErrorBoundry from "../error-boundry";
 import ErrorIndicator from "../error-indicator";
 import Footer from "../footer";
@@ -12,7 +12,7 @@ const App = ({ modnikkyService }) => {
     <div>
       <ErrorBoundry>
         <Header />
-        <Bag />
+        <CustomerServicePage />
 
         <ErrorIndicator />
         <Spinner />

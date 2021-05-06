@@ -1,0 +1,17 @@
+.customer-categories {
+  width: 25%;
+}
+.customer-categories__title {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #8c8c8c;
+  margin-bottom: 3rem;
+}
+.customer-categories__item {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #000f08;
+  margin-bottom: 1.6rem;
+}
