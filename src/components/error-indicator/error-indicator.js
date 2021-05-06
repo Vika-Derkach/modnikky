@@ -5,11 +5,11 @@ const ErrorIndicator = () => {
   return (
     <div className="error-indicator">
       <div className="bam">
-        <h4>BAM!!!</h4>
+        <h3>BAM!!!</h3>
       </div>
-      <div>something has gone wrong but keep calm </div>
-      <div> everything is okay with models and clothes</div>
-      <div>We will fix it soon</div>
+      <div>Something has gone wrong but keep calm. </div>
+      <div> Everything is okay with models and clothes.</div>
+      <div>We will fix it soon =)</div>
       <img className="image-bam" src={icon} alt=" error icon" />
     </div>
   );

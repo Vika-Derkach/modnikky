@@ -1,5 +1,6 @@
 import React from "react";
 import ContainedButton from "../contained-button";
+import ProductDescr from "../product-descr";
 import SizeSelector from "../size-selector";
 import "./product-section.css";
 const ProductSection = () => {
@@ -35,7 +36,9 @@ const ProductSection = () => {
           {" "}
           <ContainedButton button_text={button_text} />
         </div>
-        <div className="product-section_text__descr"></div>
+        <div className="product-section_text__descr">
+          <ProductDescr />
+        </div>
       </div>
     </div>
   );

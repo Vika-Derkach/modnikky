@@ -2,17 +2,19 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-bottom: 7.5rem;
 }
 .product-section .product-section_picture {
-  width: 30%;
+  width: 35%;
 }
 .product-section .product-section_picture img {
   width: 100%;
   height: 100%;
 }
 .product-section .product-section_text {
-  margin-left: 5%;
+  margin-left: 3%;
   padding-top: 3rem;
+  width: 24%;
 }
 .product-section_text .product-section_text__title {
   font-weight: 500;

@@ -1,4 +1,5 @@
 import React from "react";
+import CompleteLook from "../complete-look";
 import NewArrivals from "../new-arrivals";
 import ProductSection from "../product-section";
 import "./product-page.css";
@@ -12,9 +13,11 @@ const ProductPage = () => {
     "https://i.pinimg.com/474x/28/7e/bb/287ebbb9a33265ab8915b0ffd50f7fd7.jpg";
   const sweater4 =
     "https://media.boohoo.com/i/boohoo/dzz11660_mid%2520blue_xl?pdp.template";
+
   return (
     <div className="product-page">
       <ProductSection />
+      <CompleteLook />
       <NewArrivals
         arr_title="YOU MAY ALSO LIKE"
         arr_pic1={sweater1}

@@ -1,0 +1,21 @@
+.complete-look-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.complete-look-picture {
+  width: 32%;
+}
+.complete-look-picture img {
+  width: 100%;
+  height: 100%;
+}
+.complete-look-picture__text {
+  font-weight: 500;
+  font-size: 2.8rem;
+  line-height: 3rem;
+  color: #000f08;
+  padding-top: 20%;
+  padding-left: 7%;
+}
