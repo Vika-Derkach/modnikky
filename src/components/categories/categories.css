@@ -21,3 +21,11 @@
 .button-categories:focus {
   outline: none;
 }
+.categories-container .filters-categories {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #8c8c8c;
+}

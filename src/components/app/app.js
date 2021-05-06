@@ -1,10 +1,10 @@
 import React from "react";
-import CatalogPage from "../catalog-page";
 import ErrorBoundry from "../error-boundry";
 import ErrorIndicator from "../error-indicator";
 import Footer from "../footer";
 import Header from "../header";
 import { withModnikkyService } from "../hoc";
+import ProductPage from "../product-page";
 import Spinner from "../spinner";
 const App = ({ modnikkyService }) => {
   console.log(modnikkyService.getClothes());
@@ -12,8 +12,8 @@ const App = ({ modnikkyService }) => {
     <div>
       <ErrorBoundry>
         <Header />
+        <ProductPage />
 
-        <CatalogPage />
         <ErrorIndicator />
         <Spinner />
         <Footer />

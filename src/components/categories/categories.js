@@ -1,4 +1,5 @@
 import React from "react";
+import TreeViewCategories from "../tree-view-categories";
 import "./categories.css";
 const Categories = () => {
   return (
@@ -19,6 +20,8 @@ const Categories = () => {
         <button className="button-categories">SKIRTS</button>
         <button className="button-categories">SALE</button>
         <button className="button-categories">SHOP ALL</button>
+        <div className="filters-categories">FILTERS</div>
+        <TreeViewCategories />
       </div>
     </div>
   );

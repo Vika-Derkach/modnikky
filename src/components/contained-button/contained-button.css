@@ -1,0 +1,15 @@
+.button {
+  padding: 1.5rem 3.8rem;
+  color: white;
+  background-color: #000f08;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  text-align: center;
+  border: none;
+}
+.button:hover {
+  background-color: #8c8c8c;
+  border: none;
+  box-shadow: 15px 15px 15px rgba(140, 140, 140, 0.4);
+}
