@@ -23,9 +23,11 @@
   background-color: transparent;
   color: white;
   padding: 1rem 2.5rem;
+  outline: none;
 }
 .main-text .main-text__button:hover {
   border: 1px dashed white;
   background-color: rgba(56, 79, 88, 0.5);
   color: white;
+  outline: none;
 }

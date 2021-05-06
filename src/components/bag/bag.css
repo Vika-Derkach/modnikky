@@ -1,0 +1,35 @@
+.bag {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.bag .bag-header {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  letter-spacing: 0.04em;
+  color: #000f08;
+  border-bottom: #d8d8d8 2px solid;
+  padding-bottom: 0.8rem;
+}
+.bag .bag-header span {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #8c8c8c;
+  margin-left: 1.7rem;
+}
+.bag .payment {
+  margin-top: 3rem;
+  text-align: center;
+}
+.bag .payment .bag-total {
+  margin-bottom: 2rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  letter-spacing: 0.04em;
+  color: #000f08;
+}
