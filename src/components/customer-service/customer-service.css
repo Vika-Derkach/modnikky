@@ -6,4 +6,29 @@
   font-size: 3rem;
   line-height: 3rem;
   color: #000000;
+  margin-bottom: 7.2rem;
+}
+.customer-service__item {
+  margin-bottom: 5rem;
+}
+.customer-service__item span {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #8c8c8c;
+  margin-bottom: 1.6rem;
+}
+.customer-service__item p {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #000f08;
+  /* margin-bottom: 1.6rem; */
+}
+.customer-service .customer-service__item .customer-service__item__text {
+  margin-bottom: 1.6rem;
+}
+.customer-service__item .payment-text {
+  width: 70%;
+  margin-bottom: 1.6rem;
 }
