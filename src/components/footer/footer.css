@@ -25,11 +25,21 @@
   justify-content: center;
 }
 .footer-text__form .footer-text__form_input {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 0.8rem;
   font-size: 1.4rem;
   line-height: 1.5rem;
   border-radius: 5px;
   letter-spacing: 0.04em;
   color: #8c8c8c;
+  border: none;
+  border-bottom: #d8d8d8 2px solid;
+}
+.footer-text__form .footer-text__form_input:focus {
+  border: none;
+  outline: none;
+  border-bottom: #d8d8d8 2px solid;
 }
 .footer-text__form .footer-text__form_button {
   font-weight: 500;
@@ -40,9 +50,11 @@
   border: none;
   margin: 5px 2px;
   background-color: #fff;
+  outline: none;
 }
 .footer-text__form .footer-text__form_button:hover {
-  border: 1px black solid;
+  outline: none;
+  color: #8c8c8c;
 }
 .footer-col {
   display: flex;
