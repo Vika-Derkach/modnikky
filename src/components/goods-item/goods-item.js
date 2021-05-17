@@ -1,12 +1,10 @@
 import React from "react";
 import "./goods-item.css";
-const GoodsItem = () => {
+const GoodsItem = ({ cloth }) => {
+  const { frontPicture } = cloth;
   return (
     <div className="good-item">
-      <img
-        src="https://handcmediastorage.blob.core.windows.net/productimages/JK/JKPRAS01-F30-121326-800px-1040px.jpg"
-        alt=""
-      />
+      <img src={frontPicture} alt="" />
     </div>
   );
 };

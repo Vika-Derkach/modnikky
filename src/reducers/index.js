@@ -1,16 +1,5 @@
 const initialState = {
-  clothes: [
-    {
-      id: 1,
-      title: "Production-Ready Microservices",
-      author: "Susan J. Fowler",
-    },
-    {
-      id: 2,
-      title: "Release It!",
-      author: "Michael T. Nygard",
-    },
-  ],
+  clothes: [],
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {

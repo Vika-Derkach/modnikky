@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { clothesLoaded } from "../../actions";
 import GoodsItem from "../goods-item";
 import { withModnikkyService } from "../hoc";
 import "./goods.css";
-const Goods = ({ clothes, modnikkyService }) => {
+const Goods = ({ clothes, modnikkyService, clothesLoaded }) => {
   useEffect(() => {
     const data = modnikkyService.getClothes();
-    console.log(data);
+    clothesLoaded(data);
   }, []);
   // const { modnikkyService } = this.props;
   // console.log(modnikkyService);
@@ -23,7 +24,19 @@ const Goods = ({ clothes, modnikkyService }) => {
 const mapStateToProps = ({ clothes }) => {
   return { clothes };
 };
-const mapDispatchToProps = (dispatch) => {
-  return {};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     clothesLoaded: (newClothes) => {
+//       dispatch({
+//         type: "CLOTHES_LOADED",
+//         payload: newClothes,
+//       });
+//     },
+//   };
+// };
+const mapDispatchToProps = {
+  clothesLoaded: clothesLoaded,
 };
-export default withModnikkyService()(connect(mapStateToProps)(Goods));
+export default withModnikkyService()(
+  connect(mapStateToProps, mapDispatchToProps)(Goods)
+);
