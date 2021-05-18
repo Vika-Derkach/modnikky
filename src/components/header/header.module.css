@@ -33,4 +33,8 @@ a {
 .header_right__search {
   border: none;
   width: 30%;
+  outline: none;
+}
+.header_right__search:focus {
+  border-bottom: #d8d8d8 1px solid;
 }

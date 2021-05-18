@@ -1,10 +1,12 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import CatalogPage from "../catalog-page";
 import ErrorBoundry from "../error-boundry";
 import ErrorIndicator from "../error-indicator";
 import Footer from "../footer";
 import Header from "../header";
 import { withModnikkyService } from "../hoc";
+import HomePage from "../home-page";
 import Spinner from "../spinner";
 const App = ({ modnikkyService }) => {
   // console.log(modnikkyService.getClothes());
@@ -12,8 +14,11 @@ const App = ({ modnikkyService }) => {
     <div>
       <ErrorBoundry>
         <Header />
-        <CatalogPage />
-
+        <Switch>
+          <Route path="/" component={HomePage} exact />
+          <Route path="/catalogue" component={CatalogPage} />
+          <Route render={() => <h2>Page is not found</h2>} />
+        </Switch>
         <ErrorIndicator />
         <Spinner />
         <Footer />

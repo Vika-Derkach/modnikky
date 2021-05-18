@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./header.module.css";
 
 const Header = () => {
@@ -10,11 +11,11 @@ const Header = () => {
 
           <a href="">SHOP</a>
 
-          <a href="">COLLECTIONS</a>
+          <Link to="/catalogue">COLLECTIONS</Link>
         </div>
-        <div className={styles.logo} href="">
+        <Link to="/" className={styles.logo} href="">
           MODNIKKY
-        </div>
+        </Link>
         <div className={styles.header_right}>
           <input
             className={styles.header_right__search}

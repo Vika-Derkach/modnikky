@@ -4,4 +4,9 @@ const clothesLoaded = (newClothes) => {
     payload: newClothes,
   };
 };
-export { clothesLoaded };
+const clothesRequested = () => {
+  return {
+    type: "BOOKS_REQUESTED",
+  };
+};
+export { clothesLoaded, clothesRequested };

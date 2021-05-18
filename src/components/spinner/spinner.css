@@ -1,3 +1,7 @@
+.spinner {
+  text-align: center;
+  margin-top: 10%;
+}
 @keyframes ldio-ch6wz36hnma {
   0% {
     transform: rotate(0);

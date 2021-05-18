@@ -3,7 +3,7 @@ import React from "react";
 import "./spinner.css";
 const Spinner = () => {
   return (
-    <div>
+    <div className="spinner">
       {/* className={styles.spinner} */}
       <div className="loadingio-spinner-reload-yg9lbnr59hs">
         <div className="ldio-ch6wz36hnma">
