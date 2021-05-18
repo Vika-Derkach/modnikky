@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import CatalogPage from "../catalog-page";
 import ErrorBoundry from "../error-boundry";
-import ErrorIndicator from "../error-indicator";
 import Footer from "../footer";
 import Header from "../header";
 import { withModnikkyService } from "../hoc";
@@ -19,7 +18,7 @@ const App = ({ modnikkyService }) => {
           <Route path="/catalogue" component={CatalogPage} />
           <Route render={() => <h2>Page is not found</h2>} />
         </Switch>
-        <ErrorIndicator />
+
         <Spinner />
         <Footer />
       </ErrorBoundry>

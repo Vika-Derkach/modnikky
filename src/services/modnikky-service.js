@@ -18,7 +18,11 @@ export default class ModnikkyService {
   getClothes() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(this.data);
+        if (Math.random() > 0.999) {
+          reject(new Error("Something bad happened"));
+        } else {
+          resolve(this.data);
+        }
       }, 700);
     });
   }

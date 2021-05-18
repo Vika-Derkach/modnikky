@@ -9,4 +9,11 @@ const clothesRequested = () => {
     type: "BOOKS_REQUESTED",
   };
 };
-export { clothesLoaded, clothesRequested };
+const clothesError = (error) => {
+  return {
+    type: "CLOTHES_ERROR",
+    payload: error,
+  };
+};
+
+export { clothesLoaded, clothesRequested, clothesError };
