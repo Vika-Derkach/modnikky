@@ -4,7 +4,6 @@ import { clothesError, clothesLoaded, clothesRequested } from "../../actions";
 import ErrorIndicator from "../error-indicator";
 import GoodsItem from "../goods-item";
 import { withModnikkyService } from "../hoc";
-import ProductPage from "../product-page";
 import Spinner from "../spinner";
 import "./goods.css";
 const Goods = ({
@@ -38,7 +37,6 @@ const Goods = ({
           return <GoodsItem cloth={cloth} key={cloth.id} />;
         })}
       </div>
-      <ProductPage />
     </div>
   );
 };

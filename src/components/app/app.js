@@ -6,7 +6,7 @@ import Footer from "../footer";
 import Header from "../header";
 import { withModnikkyService } from "../hoc";
 import HomePage from "../home-page";
-import Spinner from "../spinner";
+import ProductPage from "../product-page";
 const App = ({ modnikkyService }) => {
   // console.log(modnikkyService.getClothes());
   return (
@@ -16,10 +16,10 @@ const App = ({ modnikkyService }) => {
         <Switch>
           <Route path="/" component={HomePage} exact />
           <Route path="/catalogue" component={CatalogPage} />
+          <Route path="/product/:id?" component={ProductPage} />
           <Route render={() => <h2>Page is not found</h2>} />
         </Switch>
 
-        <Spinner />
         <Footer />
       </ErrorBoundry>
     </div>

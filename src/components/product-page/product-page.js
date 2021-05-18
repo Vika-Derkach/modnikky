@@ -1,9 +1,19 @@
 import React from "react";
+import { connect } from "react-redux";
 import CompleteLook from "../complete-look";
+import { withModnikkyService } from "../hoc";
 import NewArrivals from "../new-arrivals";
 import ProductSection from "../product-section";
 import "./product-page.css";
-const ProductPage = () => {
+
+const ProductPage = ({ clothes }) => {
+  // useEffect(() => {
+
+  //   modnikkyService
+  //     .getClothes()
+  //     .then((data) => clothesLoaded(data));
+
+  // }, []);
   ///mathrandom service image
   const sweater1 =
     "https://www.na-kd.com/globalassets/nakd_destroyed_detail_high_waist_staight_jeans_1018-006823-0116_01c-1.jpg?ref=09FAA58D86";
@@ -13,7 +23,8 @@ const ProductPage = () => {
     "https://i.pinimg.com/474x/28/7e/bb/287ebbb9a33265ab8915b0ffd50f7fd7.jpg";
   const sweater4 =
     "https://media.boohoo.com/i/boohoo/dzz11660_mid%2520blue_xl?pdp.template";
-
+  const { frontPicture } = clothes;
+  console.log(frontPicture);
   return (
     <div className="product-page">
       <ProductSection />
@@ -28,4 +39,7 @@ const ProductPage = () => {
     </div>
   );
 };
-export default ProductPage;
+const mapStateToProps = ({ clothes }) => {
+  return { clothes };
+};
+export default withModnikkyService()(connect(mapStateToProps)(ProductPage));
