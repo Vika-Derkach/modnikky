@@ -14,6 +14,7 @@ const Goods = ({
   clothesLoaded,
   clothesRequested,
   clothesError,
+  onItemSelected,
 }) => {
   useEffect(() => {
     clothesRequested();
@@ -34,7 +35,13 @@ const Goods = ({
     <div>
       <div className="goods-item-container">
         {clothes.map((cloth) => {
-          return <GoodsItem cloth={cloth} key={cloth.id} />;
+          return (
+            <GoodsItem
+              cloth={cloth}
+              key={cloth.id}
+              onItemSelected={() => onItemSelected(cloth.id)}
+            />
+          );
         })}
       </div>
     </div>
@@ -57,6 +64,9 @@ const mapDispatchToProps = {
   clothesLoaded: clothesLoaded,
   clothesRequested: clothesRequested,
   clothesError: clothesError,
+  onItemSelected: (id) => {
+    console.log("item selected", id);
+  },
 };
 export default withModnikkyService()(
   connect(mapStateToProps, mapDispatchToProps)(Goods)
