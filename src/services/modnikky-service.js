@@ -4,7 +4,6 @@ export default class ModnikkyService {
       id: 1,
       title: "Pinterest Europe Blue Crimping Denim Shorts",
       price: "50",
-
       frontPicture:
         "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F50%2Fc7%2F50c77565f101f976d866104bf0c8f2adaebc9417.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_jeans_loose%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
       additionalPicture:
@@ -13,6 +12,7 @@ export default class ModnikkyService {
       product_descr:
         "High-rise waist; \n Concealed fly; \n Functional pockets; \n Raw-edge hem; \n Regular fit; \n True to size",
       color: "BLUE",
+      kind: "shorts",
     },
     {
       id: 2,
@@ -26,6 +26,7 @@ export default class ModnikkyService {
       product_descr:
         "High-rise waist; \n Concealed fly; \n Button fastening; \n Functional pockets; \n Slim tapered leg; \n Sits on the ankle",
       color: "BLUE",
+      kind: "jeans",
     },
   ];
   getClothes() {

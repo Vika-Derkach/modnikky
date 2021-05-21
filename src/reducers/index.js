@@ -50,6 +50,7 @@ const reducer = (state = initialState, action) => {
         product_descr: cloth.product_descr,
         price: cloth.price,
         color: cloth.color,
+        kind: cloth.kind,
       };
       return {
         ...state,

@@ -19,7 +19,7 @@ const BagItem = () => {
         <div className="bag-item_descr__selector">QUANTITY:</div>
       </div>
       <button className="button-remove">
-        <i class="fa fa-times" aria-hidden="true"></i>
+        <i className="fa fa-times" aria-hidden="true"></i>
       </button>
     </div>
   );

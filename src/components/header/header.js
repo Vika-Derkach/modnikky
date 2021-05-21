@@ -23,9 +23,9 @@ const Header = () => {
             placeholder="SEARCH"
           />
 
-          <a href="">SIGN IN</a>
+          <Link to="/sign-up">SIGN IN</Link>
 
-          <a href="">BAG (2)</a>
+          <Link to="/bag">BAG (2)</Link>
         </div>
       </div>
     </div>
