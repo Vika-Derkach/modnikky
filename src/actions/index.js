@@ -15,5 +15,10 @@ const clothesError = (error) => {
     payload: error,
   };
 };
-
-export { clothesLoaded, clothesRequested, clothesError };
+const onItemSelected = (clothId) => {
+  return {
+    type: "ON_ITEM_SELECTED",
+    payload: clothId,
+  };
+};
+export { clothesLoaded, clothesRequested, clothesError, onItemSelected };

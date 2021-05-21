@@ -4,16 +4,18 @@ const initialState = {
   error: null,
   selectedItem: null,
   productItem: [
-    {
-      id: 1,
-      title: "CHALK SAINTS",
-      frontPicture:
-        "https://i.pinimg.com/736x/05/da/14/05da143bb08929bc209598c319ec2ce2.jpg",
-    },
+    // {
+    //   id: 1,
+    //   title: "CHALK SAINTS",
+    //   frontPicture:
+    //     "https://i.pinimg.com/736x/05/da/14/05da143bb08929bc209598c319ec2ce2.jpg",
+    // },
   ],
 };
 
 const reducer = (state = initialState, action) => {
+  console.log(action.type);
+
   switch (action.type) {
     case "BOOKS_REQUESTED":
       return {
@@ -38,16 +40,15 @@ const reducer = (state = initialState, action) => {
       };
     case "ON_ITEM_SELECTED":
       const clothId = action.payload;
-      const cloth = state.clothes.find((book) => book.id === clothId);
+      const cloth = state.clothes.find((cloth) => cloth.id === clothId);
       const newItem = {
         id: cloth.id,
-        name: cloth.title,
-        count: 1,
-        total: cloth.price,
+        title: cloth.title,
+        frontPicture: cloth.frontPicture,
       };
       return {
         ...state,
-        selectedItem: [newItem],
+        productItem: [newItem],
       };
     default:
       return state;

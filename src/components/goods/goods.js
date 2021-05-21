@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { clothesError, clothesLoaded, clothesRequested } from "../../actions";
+import {
+  clothesError,
+  clothesLoaded,
+  clothesRequested,
+  onItemSelected,
+} from "../../actions";
 import ErrorIndicator from "../error-indicator";
 import GoodsItem from "../goods-item";
 import { withModnikkyService } from "../hoc";
@@ -31,6 +36,7 @@ const Goods = ({
   if (error) {
     return <ErrorIndicator />;
   }
+  // console.log(onItemSelected());
   return (
     <div>
       <div className="goods-item-container">
@@ -64,9 +70,7 @@ const mapDispatchToProps = {
   clothesLoaded: clothesLoaded,
   clothesRequested: clothesRequested,
   clothesError: clothesError,
-  onItemSelected: (id) => {
-    console.log("item selected", id);
-  },
+  onItemSelected: (id) => onItemSelected(id),
 };
 export default withModnikkyService()(
   connect(mapStateToProps, mapDispatchToProps)(Goods)
