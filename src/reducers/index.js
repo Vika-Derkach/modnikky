@@ -45,6 +45,11 @@ const reducer = (state = initialState, action) => {
         id: cloth.id,
         title: cloth.title,
         frontPicture: cloth.frontPicture,
+        additionalPicture: cloth.additionalPicture,
+        fabric: cloth.fabric,
+        product_descr: cloth.product_descr,
+        price: cloth.price,
+        color: cloth.color,
       };
       return {
         ...state,

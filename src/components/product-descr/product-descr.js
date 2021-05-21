@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ProductDescr() {
+export default function ProductDescr({ fabric, product_descr }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState([]);
   const [selected, setSelected] = React.useState([]);
@@ -41,10 +41,7 @@ export default function ProductDescr() {
       onNodeSelect={handleSelect}
     >
       <TreeItem nodeId="1" label="PRODUCT DESCRIPTION">
-        <TreeItem
-          nodeId="2"
-          label="Saints are a low-waist, drop crotch relaxed boyfriend jean. Straight fit across the hips, bow shape legs, with knee darts and tapered leg. Back pockets dropped slightly for slouch feel. "
-        />
+        <TreeItem nodeId="2" label={product_descr} />
       </TreeItem>
       <TreeItem nodeId="3" label="SHIPPING & RETURNS">
         <TreeItem
@@ -55,7 +52,7 @@ export default function ProductDescr() {
       </TreeItem>
 
       <TreeItem nodeId="5" label="FABRIC COMPOSITION">
-        <TreeItem nodeId="6" label="Cotton" />
+        <TreeItem nodeId="6" label={fabric} />
       </TreeItem>
     </TreeView>
   );

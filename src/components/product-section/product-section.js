@@ -1,8 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 import ContainedButton from "../contained-button";
 import ProductDescr from "../product-descr";
 import SizeSelector from "../size-selector";
-import { connect } from "react-redux";
 import "./product-section.css";
 
 const ProductSection = ({ items, price, onItemSelected }) => {
@@ -12,7 +12,16 @@ const ProductSection = ({ items, price, onItemSelected }) => {
   return (
     <div>
       {items.map((item, idx) => {
-        const { id, frontPicture, title } = item;
+        const {
+          id,
+          frontPicture,
+          title,
+          additionalPicture,
+          fabric,
+          product_descr,
+          price,
+          color,
+        } = item;
         return (
           <div key={id} className="product-section">
             <div className="product-section_picture">
@@ -20,16 +29,17 @@ const ProductSection = ({ items, price, onItemSelected }) => {
               {/* "https://i.pinimg.com/736x/05/da/14/05da143bb08929bc209598c319ec2ce2.jpg" */}
             </div>
             <div className="product-section_picture">
-              <img
+              {/* <img
                 src="https://i.pinimg.com/originals/24/11/72/2411729f35288ffa12641f60980a1f49.jpg"
                 alt=""
-              />
+              /> */}
+              <img src={additionalPicture} alt="" />
             </div>
             <div className="product-section_text">
               <div className="product-section_text__title">{title}</div>
-              <div className="product-section_text__price">USD $300.00</div>
+              <div className="product-section_text__price">USD ${price}</div>
               <div className="product-section_text__order">PRE-ORDER</div>
-              <div className="product-section_text__color">COLOR</div>
+              <div className="product-section_text__color">COLOR: {color}</div>
               <div className="product-section_text__size">
                 <div className="product-section_text__size__title">SIZE</div>
                 <div className="size-button">
@@ -41,7 +51,7 @@ const ProductSection = ({ items, price, onItemSelected }) => {
                 <ContainedButton button_text={button_text} />
               </div>
               <div className="product-section_text__descr">
-                <ProductDescr />
+                <ProductDescr product_descr={product_descr} fabric={fabric} />
               </div>
             </div>
           </div>
