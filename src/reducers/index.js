@@ -81,6 +81,36 @@ const reducer = (state = initialState, action) => {
         ...state,
         bagItems: [...state.bagItems, newBagItem],
       };
+    case "PRODUCT_REMOVED_FROM_BAG":
+      const { bagItems } = state;
+      const bagProductRemovedId = action.payload;
+      // const bagItemIndex = bagItems.findIndex(
+      //   ({ id }) => id === bagProductRemovedId
+      // );
+      // const newBagRemovedProduct = [
+      //   ...bagItems.slice(0, bagItemIndex),
+      //   ...bagItems.slice(bagItemIndex + 1),
+      // ];
+      const newBagRemovedProduct = bagItems.filter(
+        (el) => el.id !== bagProductRemovedId
+      );
+      return {
+        ...state,
+        bagItems: [newBagRemovedProduct],
+      };
+
+    // case "BOOK_DELETED_FROM_CART":
+    //   const { cartItems } = state;
+    //   const arrId = action.payload;
+    //   const cartIndex = state.cartItems.findIndex(({ id }) => id === arrId);
+    //   const newCartItem = [
+    //     ...cartItems.slice(0, cartIndex),
+    //     ...cartItems.slice(cartIndex + 1),
+    //   ];
+    //   return {
+    //     ...state,
+    //     cartItems: newCartItem,
+    //   };
 
     default:
       return state;

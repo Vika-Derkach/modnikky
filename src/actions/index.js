@@ -21,10 +21,16 @@ const onItemSelected = (clothId) => {
     payload: clothId,
   };
 };
-const productAddedToCart = (bagProductId) => {
+const productAddedToBag = (bagProductId) => {
   return {
     type: "PRODUCT_ADDED_TO_BAG",
     payload: bagProductId,
+  };
+};
+const productRemovedFromBag = (bagProductRemovedId) => {
+  return {
+    type: "PRODUCT_REMOVED_FROM_BAG",
+    payload: bagProductRemovedId,
   };
 };
 export {
@@ -32,5 +38,6 @@ export {
   clothesRequested,
   clothesError,
   onItemSelected,
-  productAddedToCart,
+  productAddedToBag,
+  productRemovedFromBag,
 };

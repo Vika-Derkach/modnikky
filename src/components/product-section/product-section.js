@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { productAddedToCart } from "../../actions";
+import { productAddedToBag } from "../../actions";
 import ContainedButton from "../contained-button";
 import { withModnikkyService } from "../hoc";
 import ProductDescr from "../product-descr";
@@ -72,7 +72,7 @@ const mapStateToProps = ({ productItems }) => {
   };
 };
 const mapDispatchToProps = {
-  onAddedToBag: (id) => productAddedToCart(id),
+  onAddedToBag: (id) => productAddedToBag(id),
 };
 
 // const mapDispatchToProps
