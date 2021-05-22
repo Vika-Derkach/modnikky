@@ -1,11 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
+import { productAddedToCart } from "../../actions";
 import ContainedButton from "../contained-button";
+import { withModnikkyService } from "../hoc";
 import ProductDescr from "../product-descr";
 import SizeSelector from "../size-selector";
 import "./product-section.css";
 
-const ProductSection = ({ items, price, onItemSelected }) => {
+const ProductSection = ({ items, onAddedToBag, price, onItemSelected }) => {
   const button_text = "ADD TO BAG";
   // const {id, title, frontPicture} = items;
 
@@ -48,7 +50,11 @@ const ProductSection = ({ items, price, onItemSelected }) => {
               </div>
               <div className="product-section_text__button">
                 {" "}
-                <ContainedButton button_text={button_text} />
+                <ContainedButton
+                  onAction={() => onAddedToBag(id)}
+                  // onClick={onAddedtoCart(id)}
+                  button_text={button_text}
+                />
               </div>
               <div className="product-section_text__descr">
                 <ProductDescr product_descr={product_descr} fabric={fabric} />
@@ -60,10 +66,16 @@ const ProductSection = ({ items, price, onItemSelected }) => {
     </div>
   );
 };
-const mapStateToProps = ({ productItem }) => {
+const mapStateToProps = ({ productItems }) => {
   return {
-    items: productItem,
+    items: productItems,
   };
 };
+const mapDispatchToProps = {
+  onAddedToBag: (id) => productAddedToCart(id),
+};
+
 // const mapDispatchToProps
-export default connect(mapStateToProps)(ProductSection);
+export default withModnikkyService()(
+  connect(mapStateToProps, mapDispatchToProps)(ProductSection)
+);

@@ -3,7 +3,7 @@ const initialState = {
   loading: true,
   error: null,
   selectedItem: null,
-  productItem: [
+  productItems: [
     // {
     //   id: 1,
     //   title: "CHALK SAINTS",
@@ -11,6 +11,15 @@ const initialState = {
     //     "https://i.pinimg.com/736x/05/da/14/05da143bb08929bc209598c319ec2ce2.jpg",
     // },
   ],
+  bagItems: [
+    // {
+    //   id: 1,
+    //   title: "CHALK SAINTSbcbcbcbcv",
+    //   frontPicture:
+    //     "https://i.pinimg.com/736x/05/da/14/05da143bb08929bc209598c319ec2ce2.jpg",
+    // },
+  ],
+  orderTotal: 450,
 };
 
 const reducer = (state = initialState, action) => {
@@ -54,8 +63,25 @@ const reducer = (state = initialState, action) => {
       };
       return {
         ...state,
-        productItem: [newItem],
+        productItems: [newItem],
       };
+    case "PRODUCT_ADDED_TO_BAG":
+      const bagProductId = action.payload;
+      const bagProduct = state.clothes.find(
+        (product) => product.id === bagProductId
+      );
+      const newBagItem = {
+        id: bagProduct.id,
+        title: bagProduct.title,
+        frontPicture: bagProduct.frontPicture,
+        price: bagProduct.price,
+        color: bagProduct.color,
+      };
+      return {
+        ...state,
+        bagItems: [...state.bagItems, newBagItem],
+      };
+
     default:
       return state;
   }

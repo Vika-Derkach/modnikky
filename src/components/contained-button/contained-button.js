@@ -1,9 +1,11 @@
 import React from "react";
 import "./contained-button.css";
-const ContainedButton = ({ button_text }) => {
+const ContainedButton = ({ button_text, onAction }) => {
   return (
     <div>
-      <button className="button">{button_text}</button>
+      <button onClick={onAction} className="button">
+        {button_text}
+      </button>
     </div>
   );
 };

@@ -23,8 +23,7 @@ const ProductPage = ({ clothes }) => {
     "https://i.pinimg.com/474x/28/7e/bb/287ebbb9a33265ab8915b0ffd50f7fd7.jpg";
   const sweater4 =
     "https://media.boohoo.com/i/boohoo/dzz11660_mid%2520blue_xl?pdp.template";
-  const { frontPicture } = clothes;
-  console.log(frontPicture);
+
   return (
     <div className="product-page">
       <ProductSection />

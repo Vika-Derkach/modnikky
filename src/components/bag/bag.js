@@ -1,22 +1,32 @@
 import React from "react";
+import { connect } from "react-redux";
 import BagItem from "../bag-item";
 import ContainedButton from "../contained-button";
+import { withModnikkyService } from "../hoc";
 import "./bag.css";
-const Bag = () => {
+const Bag = ({ products, total }) => {
   const button_text_checkout = "PROCEED TO CHECKOUT";
   return (
     <div className="bag">
       <div className="bag-header">
         BAG <span>2 items</span>{" "}
       </div>
-
-      <BagItem />
+      {products.map((product, idx) => {
+        return <BagItem product={product} key={product.id} />;
+      })}
       <div className="payment">
         {" "}
-        <div className="bag-total">Total USD $490.00</div>
+        <div className="bag-total">Total USD ${total}</div>
         <ContainedButton button_text={button_text_checkout} />
       </div>
     </div>
   );
 };
-export default Bag;
+const mapStateToProps = ({ bagItems, orderTotal }) => {
+  return {
+    products: bagItems,
+    total: orderTotal,
+  };
+};
+
+export default withModnikkyService()(connect(mapStateToProps)(Bag));
