@@ -3,25 +3,35 @@ const initialState = {
   loading: true,
   error: null,
   selectedItem: null,
-  productItems: [
-    // {
-    //   id: 1,
-    //   title: "CHALK SAINTS",
-    //   frontPicture:
-    //     "https://i.pinimg.com/736x/05/da/14/05da143bb08929bc209598c319ec2ce2.jpg",
-    // },
-  ],
-  bagItems: [
-    // {
-    //   id: 1,
-    //   title: "CHALK SAINTSbcbcbcbcv",
-    //   frontPicture:
-    //     "https://i.pinimg.com/736x/05/da/14/05da143bb08929bc209598c319ec2ce2.jpg",
-    // },
-  ],
-  orderTotal: 450,
+  productItems: [],
+  bagItems: [],
+  orderTotal: 0,
 };
-
+const updateBagItems = (bagItems, item, idx) => {
+  //новий елемент і його потібно добавити в масив
+  if (idx === -1) {
+    return [...bagItems, item];
+  }
+  return [...bagItems.slice(0, idx), item, ...bagItems.slice(idx + 1)];
+};
+const updateBagItem = (bagProduct, bagProductItem) => {
+  if (bagProductItem) {
+    return {
+      ...bagProductItem,
+      price: bagProductItem.price + bagProduct.price,
+      count: bagProductItem.count + 1,
+    };
+  } else {
+    return {
+      id: bagProduct.id,
+      title: bagProduct.title,
+      frontPicture: bagProduct.frontPicture,
+      price: bagProduct.price,
+      color: bagProduct.color,
+      count: 1,
+    };
+  }
+};
 const reducer = (state = initialState, action) => {
   console.log(action.type);
 
@@ -74,39 +84,40 @@ const reducer = (state = initialState, action) => {
         ({ id }) => id === bagProductId
       );
       const bagProductItem = state.bagItems[bagProductIndex];
-      let newBagItem;
-      if (bagProductItem) {
-        newBagItem = {
-          ...bagProductItem,
-          price: bagProductItem.price + bagProduct.price,
 
-          count: bagProductItem.count + 1,
-        };
-      } else {
-        newBagItem = {
-          id: bagProduct.id,
-          title: bagProduct.title,
-          frontPicture: bagProduct.frontPicture,
-          price: bagProduct.price,
-          color: bagProduct.color,
-          count: 1,
-        };
-      }
-      if (bagProductIndex < 0) {
-        return {
-          ...state,
-          bagItems: [...state.bagItems, newBagItem],
-        };
-      } else {
-        return {
-          ...state,
-          bagItems: [
-            ...state.bagItems.slice(0, bagProductIndex),
-            newBagItem,
-            ...state.bagItems.slice(bagProductIndex + 1),
-          ],
-        };
-      }
+      // let countCart = 0;
+      // // let countPriceCart = 0;
+      // state.bagItems.forEach((bagItem) => {
+      //   countCart = bagItem.count + countCart + 1;
+      // });
+      // updatedItems.forEach((updatedItem) => {
+      //   countPriceCart = updatedItem.total + countPriceCart;
+      // });
+
+      // let newBagItem;
+      // if (bagProductItem) {
+      //   newBagItem = {
+      //     ...bagProductItem,
+      //     price: bagProductItem.price + bagProduct.price,
+
+      //     count: bagProductItem.count + 1,
+      //   };
+      // } else {
+      //   newBagItem = {
+      //     id: bagProduct.id,
+      //     title: bagProduct.title,
+      //     frontPicture: bagProduct.frontPicture,
+      //     price: bagProduct.price,
+      //     color: bagProduct.color,
+      //     count: 1,
+      //   };
+      // }
+      const newBagItem = updateBagItem(bagProduct, bagProductItem);
+      return {
+        ...state,
+        bagItems: updateBagItems(state.bagItems, newBagItem, bagProductIndex),
+        // orderTotal: countCart,
+      };
 
     case "PRODUCT_REMOVED_FROM_BAG":
       const { bagItems } = state;
@@ -114,6 +125,7 @@ const reducer = (state = initialState, action) => {
       const bagItemIndex = bagItems.findIndex(
         ({ id }) => id === bagProductRemovedId
       );
+
       // const newBagRemovedProduct = [
       //   ...bagItems.slice(0, bagItemIndex),
       //   ...bagItems.slice(bagItemIndex + 1),

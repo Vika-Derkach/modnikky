@@ -1,6 +1,6 @@
 import React from "react";
 import "./complete-look.css";
-const CompleteLook = () => {
+const CompleteLook = ({ completeLookPic }) => {
   return (
     <div>
       <div className="complete-look-container">
@@ -12,6 +12,7 @@ const CompleteLook = () => {
             src="https://i.pinimg.com/originals/fe/4c/39/fe4c390eee3db16ce43dabd1ae97ab99.jpg"
             alt=""
           />
+          {/* <img src={completeLookPic} alt="" /> */}
         </div>
         <div className="complete-look-picture">
           <img

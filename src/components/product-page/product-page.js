@@ -7,6 +7,8 @@ import ProductSection from "../product-section";
 import "./product-page.css";
 
 const ProductPage = ({ clothes }) => {
+  // const { kind, frontPicture } = clothes;
+
   // useEffect(() => {
 
   //   modnikkyService
