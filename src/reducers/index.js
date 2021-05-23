@@ -6,6 +6,7 @@ const initialState = {
   productItems: [],
   bagItems: [],
   orderTotal: 0,
+  orderTotalPrice: 0,
 };
 const updateBagItems = (bagItems, item, idx) => {
   //новий елемент і його потібно добавити в масив
@@ -85,38 +86,30 @@ const reducer = (state = initialState, action) => {
       );
       const bagProductItem = state.bagItems[bagProductIndex];
 
-      // let countCart = 0;
-      // // let countPriceCart = 0;
-      // state.bagItems.forEach((bagItem) => {
-      //   countCart = bagItem.count + countCart + 1;
-      // });
-      // updatedItems.forEach((updatedItem) => {
-      //   countPriceCart = updatedItem.total + countPriceCart;
-      // });
-
-      // let newBagItem;
-      // if (bagProductItem) {
-      //   newBagItem = {
-      //     ...bagProductItem,
-      //     price: bagProductItem.price + bagProduct.price,
-
-      //     count: bagProductItem.count + 1,
-      //   };
-      // } else {
-      //   newBagItem = {
-      //     id: bagProduct.id,
-      //     title: bagProduct.title,
-      //     frontPicture: bagProduct.frontPicture,
-      //     price: bagProduct.price,
-      //     color: bagProduct.color,
-      //     count: 1,
-      //   };
-      // }
       const newBagItem = updateBagItem(bagProduct, bagProductItem);
+
+      ////
+      const updatedItems = updateBagItems(
+        state.bagItems,
+        newBagItem,
+        bagProductIndex
+      );
+      // console.log(newItem.count);
+      // console.log(cartItems.id);
+      let countBag = 0;
+      let countPriceBag = 0;
+      updatedItems.forEach((updatedItem) => {
+        countBag = updatedItem.count + countBag;
+      });
+      updatedItems.forEach((updatedItem) => {
+        countPriceBag = updatedItem.price + countPriceBag;
+      });
+      //
       return {
         ...state,
         bagItems: updateBagItems(state.bagItems, newBagItem, bagProductIndex),
-        // orderTotal: countCart,
+        orderTotal: countBag,
+        orderTotalPrice: countPriceBag,
       };
 
     case "PRODUCT_REMOVED_FROM_BAG":
@@ -126,19 +119,38 @@ const reducer = (state = initialState, action) => {
         ({ id }) => id === bagProductRemovedId
       );
 
-      // const newBagRemovedProduct = [
-      //   ...bagItems.slice(0, bagItemIndex),
-      //   ...bagItems.slice(bagItemIndex + 1),
-      // ];
-      // const newBagRemovedProduct = bagItems.filter(
-      //   (el) => el.id !== bagProductRemovedId
+      // const bagRemovedProduct = state.clothes.find(
+      //   (product) => product.id === bagProductRemovedId
       // );
+
+      // const bagRemoveProductItem = state.bagItems[bagItemIndex];
+
+      // const newRemovedBagItem = updateBagItem(
+      //   bagRemovedProduct,
+      //   bagRemoveProductItem
+      // );
+      // const updatedRemovedItems = updateBagItems(
+      //   bagItems,
+      //   newRemovedBagItem,
+      //   bagItemIndex
+      // );
+      // let countBagRemove = 0;
+      // let countPriceBagRemove = 0;
+      // updatedRemovedItems.forEach((updatedRemovedItem) => {
+      //   countBagRemove = updatedRemovedItem.count - countBagRemove;
+      // });
+      // updatedRemovedItems.forEach((updatedRemovedItem) => {
+      //   countPriceBagRemove = updatedRemovedItem.price - countPriceBagRemove;
+      // });
+
       return {
         ...state,
         bagItems: [
           ...bagItems.slice(0, bagItemIndex),
           ...bagItems.slice(bagItemIndex + 1),
         ],
+        // orderTotal: countBagRemove,
+        // orderTotalPrice: countPriceBagRemove,
       };
 
     default:

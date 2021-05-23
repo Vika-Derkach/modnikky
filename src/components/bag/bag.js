@@ -5,12 +5,12 @@ import BagItem from "../bag-item";
 import ContainedButton from "../contained-button";
 import { withModnikkyService } from "../hoc";
 import "./bag.css";
-const Bag = ({ products, total, onDelete }) => {
+const Bag = ({ products, totalPrice, onDelete, totalItems }) => {
   const button_text_checkout = "PROCEED TO CHECKOUT";
   return (
     <div className="bag">
       <div className="bag-header">
-        BAG <span>2 items</span>{" "}
+        BAG <span>{totalItems} items</span>{" "}
       </div>
       {products.map((product, idx) => {
         return (
@@ -23,16 +23,17 @@ const Bag = ({ products, total, onDelete }) => {
       })}
       <div className="payment">
         {" "}
-        <div className="bag-total">Total USD ${total}</div>
+        <div className="bag-total">Total USD ${totalPrice}</div>
         <ContainedButton button_text={button_text_checkout} />
       </div>
     </div>
   );
 };
-const mapStateToProps = ({ bagItems, orderTotal }) => {
+const mapStateToProps = ({ bagItems, orderTotal, orderTotalPrice }) => {
   return {
     products: bagItems,
-    total: orderTotal,
+    totalItems: orderTotal,
+    totalPrice: orderTotalPrice,
   };
 };
 const mapDispatchToProps = {
