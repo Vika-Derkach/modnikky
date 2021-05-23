@@ -70,17 +70,44 @@ const reducer = (state = initialState, action) => {
       const bagProduct = state.clothes.find(
         (product) => product.id === bagProductId
       );
-      const newBagItem = {
-        id: bagProduct.id,
-        title: bagProduct.title,
-        frontPicture: bagProduct.frontPicture,
-        price: bagProduct.price,
-        color: bagProduct.color,
-      };
-      return {
-        ...state,
-        bagItems: [...state.bagItems, newBagItem],
-      };
+      const bagProductIndex = state.bagItems.findIndex(
+        ({ id }) => id === bagProductId
+      );
+      const bagProductItem = state.bagItems[bagProductIndex];
+      let newBagItem;
+      if (bagProductItem) {
+        newBagItem = {
+          ...bagProductItem,
+          price: bagProductItem.price + bagProduct.price,
+
+          count: bagProductItem.count + 1,
+        };
+      } else {
+        newBagItem = {
+          id: bagProduct.id,
+          title: bagProduct.title,
+          frontPicture: bagProduct.frontPicture,
+          price: bagProduct.price,
+          color: bagProduct.color,
+          count: 1,
+        };
+      }
+      if (bagProductIndex < 0) {
+        return {
+          ...state,
+          bagItems: [...state.bagItems, newBagItem],
+        };
+      } else {
+        return {
+          ...state,
+          bagItems: [
+            ...state.bagItems.slice(0, bagProductIndex),
+            newBagItem,
+            ...state.bagItems.slice(bagProductIndex + 1),
+          ],
+        };
+      }
+
     case "PRODUCT_REMOVED_FROM_BAG":
       const { bagItems } = state;
       const bagProductRemovedId = action.payload;
