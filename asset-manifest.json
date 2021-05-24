@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/modnikky/static/css/main.396d66d2.chunk.css",
+    "main.js": "/modnikky/static/js/main.2fb99c86.chunk.js",
+    "main.js.map": "/modnikky/static/js/main.2fb99c86.chunk.js.map",
+    "runtime-main.js": "/modnikky/static/js/runtime-main.1a2302ac.js",
+    "runtime-main.js.map": "/modnikky/static/js/runtime-main.1a2302ac.js.map",
+    "static/js/2.e3a941a3.chunk.js": "/modnikky/static/js/2.e3a941a3.chunk.js",
+    "static/js/2.e3a941a3.chunk.js.map": "/modnikky/static/js/2.e3a941a3.chunk.js.map",
+    "index.html": "/modnikky/index.html",
+    "static/css/main.396d66d2.chunk.css.map": "/modnikky/static/css/main.396d66d2.chunk.css.map",
+    "static/js/2.e3a941a3.chunk.js.LICENSE.txt": "/modnikky/static/js/2.e3a941a3.chunk.js.LICENSE.txt",
+    "static/media/bam.ddefea6d.jpg": "/modnikky/static/media/bam.ddefea6d.jpg",
+    "static/media/bikini.7c9da43e.jpg": "/modnikky/static/media/bikini.7c9da43e.jpg",
+    "static/media/home-page.css": "/modnikky/static/media/women-coat.92c284ac.jpg",
+    "static/media/hoodie.9d11a4af.jpg": "/modnikky/static/media/hoodie.9d11a4af.jpg",
+    "static/media/jeans.a44cc017.jpg": "/modnikky/static/media/jeans.a44cc017.jpg",
+    "static/media/jeans2.1fca1ec6.jpg": "/modnikky/static/media/jeans2.1fca1ec6.jpg",
+    "static/media/pic-dress.1158cd92.jpg": "/modnikky/static/media/pic-dress.1158cd92.jpg",
+    "static/media/pic-short.ea493575.jpg": "/modnikky/static/media/pic-short.ea493575.jpg",
+    "static/media/pic-suit.7d082a95.jpg": "/modnikky/static/media/pic-suit.7d082a95.jpg",
+    "static/media/sweater1.a8937d16.jpg": "/modnikky/static/media/sweater1.a8937d16.jpg",
+    "static/media/sweater2.b4f88066.jpg": "/modnikky/static/media/sweater2.b4f88066.jpg",
+    "static/media/sweater3.649ff238.jpg": "/modnikky/static/media/sweater3.649ff238.jpg",
+    "static/media/sweater4.34db5a85.jpg": "/modnikky/static/media/sweater4.34db5a85.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1a2302ac.js",
+    "static/js/2.e3a941a3.chunk.js",
+    "static/css/main.396d66d2.chunk.css",
+    "static/js/main.2fb99c86.chunk.js"
+  ]
+}
