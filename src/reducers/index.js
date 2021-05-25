@@ -127,47 +127,6 @@ const reducer = (state = initialState, action) => {
     case "PRODUCT_REMOVED_FROM_BAG":
       return updateOrder(state, action.payload, -1);
 
-    // const { bagItems } = state;
-    // const bagProductRemovedId = action.payload;
-    // const bagItemIndex = bagItems.findIndex(
-    //   ({ id }) => id === bagProductRemovedId
-    // );
-    ///////////////////
-
-    // const bagRemovedProduct = state.clothes.find(
-    //   (product) => product.id === bagProductRemovedId
-    // );
-
-    // const bagRemoveProductItem = state.bagItems[bagItemIndex];
-
-    // const newRemovedBagItem = updateBagItem(
-    //   bagRemovedProduct,
-    //   bagRemoveProductItem
-    // );
-    // const updatedRemovedItems = updateBagItems(
-    //   bagItems,
-    //   newRemovedBagItem,
-    //   bagItemIndex
-    // );
-    // let countBagRemove = 0;
-    // let countPriceBagRemove = 0;
-    // updatedRemovedItems.forEach((updatedRemovedItem) => {
-    //   countBagRemove = updatedRemovedItem.count - countBagRemove;
-    // });
-    // updatedRemovedItems.forEach((updatedRemovedItem) => {
-    //   countPriceBagRemove = updatedRemovedItem.price - countPriceBagRemove;
-    // });
-    //////////////////
-    // return {
-    //   ...state,
-    //   bagItems: [
-    //     ...bagItems.slice(0, bagItemIndex),
-    //     ...bagItems.slice(bagItemIndex + 1),
-    //   ],
-    //   // orderTotal: countBagRemove,
-    //   // orderTotalPrice: countPriceBagRemove,
-    // };
-    //////////////////////
     default:
       return state;
   }

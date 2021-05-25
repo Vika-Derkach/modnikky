@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Bag from "../bag";
 import CatalogPage from "../catalog-page";
+import CustomerServicePage from "../customer-service-page";
 import ErrorBoundry from "../error-boundry";
 import Footer from "../footer";
 import Header from "../header";
@@ -29,6 +30,7 @@ const App = ({ modnikkyService }) => {
           />
           <Route path="/bag" component={Bag} />
           <Route path="/sign-up" component={SingUpModal} />
+          <Route path="/customer-service" component={CustomerServicePage} />
           <Route render={() => <h2>Page is not found</h2>} />
         </Switch>
 
