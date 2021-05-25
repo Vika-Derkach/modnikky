@@ -2,12 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "./header.module.css";
+
 const Header = ({ totalItems }) => {
   return (
     <div>
       <div className={styles.header}>
         <div className={styles.header_left}>
-          <a href=""> NEW ARRIVALS</a>
+          <a> NEW ARRIVALS</a>
 
           <a href="">SHOP</a>
 
