@@ -1,8 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "./header.module.css";
-
-const Header = () => {
+const Header = ({ totalItems }) => {
   return (
     <div>
       <div className={styles.header}>
@@ -25,10 +25,16 @@ const Header = () => {
 
           <Link to="/sign-up">SIGN IN</Link>
 
-          <Link to="/bag">BAG (2)</Link>
+          <Link to="/bag">BAG ({totalItems})</Link>
         </div>
       </div>
     </div>
   );
 };
-export default Header;
+const mapStateToProps = ({ orderTotal }) => {
+  return {
+    totalItems: orderTotal,
+  };
+};
+
+export default connect(mapStateToProps)(Header);

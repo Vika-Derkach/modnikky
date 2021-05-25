@@ -1,6 +1,6 @@
 import React from "react";
 import "./bag-item.css";
-const BagItem = ({ product, onDelete }) => {
+const BagItem = ({ product, onDelete, onDecrease }) => {
   const { frontPicture, title, price, color, count } = product;
   return (
     <div className="bag-item">
@@ -18,7 +18,10 @@ const BagItem = ({ product, onDelete }) => {
         <div className="bag-item_descr__selector">SIZE:</div>
         <div className="bag-item_descr__selector">QUANTITY: {count}</div>
       </div>
-      <button onClick={onDelete} className="button-remove">
+      <button onClick={onDecrease} className="button-update button-reduce">
+        <i className="fa fa-minus" aria-hidden="true"></i>
+      </button>
+      <button onClick={onDelete} className="button-update">
         <i className="fa fa-times" aria-hidden="true"></i>
       </button>
     </div>

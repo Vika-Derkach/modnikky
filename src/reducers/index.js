@@ -9,18 +9,24 @@ const initialState = {
   orderTotalPrice: 0,
 };
 const updateBagItems = (bagItems, item, idx) => {
+  /// удаляє елемент з масива
+  if (item.count === 0) {
+    return [...bagItems.slice(0, idx), ...bagItems.slice(idx + 1)];
+  }
   //новий елемент і його потібно добавити в масив
   if (idx === -1) {
     return [...bagItems, item];
   }
+  //обновляє існуючий масив
   return [...bagItems.slice(0, idx), item, ...bagItems.slice(idx + 1)];
 };
-const updateBagItem = (bagProduct, bagProductItem) => {
+
+const updateBagItem = (bagProduct, bagProductItem, quantity) => {
   if (bagProductItem) {
     return {
       ...bagProductItem,
-      price: bagProductItem.price + bagProduct.price,
-      count: bagProductItem.count + 1,
+      price: bagProductItem.price + quantity * bagProduct.price,
+      count: bagProductItem.count + quantity,
     };
   } else {
     return {
@@ -32,6 +38,39 @@ const updateBagItem = (bagProduct, bagProductItem) => {
       count: 1,
     };
   }
+};
+
+const updateOrder = (state, bagProductId, quantity) => {
+  const { clothes, bagItems } = state;
+  // const bagProductId = action.payload;
+  const bagProduct = clothes.find((product) => product.id === bagProductId);
+  const bagProductIndex = bagItems.findIndex(({ id }) => id === bagProductId);
+  const bagProductItem = bagItems[bagProductIndex];
+
+  const newBagItem = updateBagItem(bagProduct, bagProductItem, quantity);
+
+  //////
+  const updatedItems = updateBagItems(
+    state.bagItems,
+    newBagItem,
+    bagProductIndex
+  );
+
+  let countBag = 0;
+  let countPriceBag = 0;
+  updatedItems.forEach((updatedItem) => {
+    countBag = updatedItem.count + countBag;
+  });
+  updatedItems.forEach((updatedItem) => {
+    countPriceBag = updatedItem.price + countPriceBag;
+  });
+  //
+  return {
+    ...state,
+    bagItems: updateBagItems(bagItems, newBagItem, bagProductIndex),
+    orderTotal: countBag,
+    orderTotalPrice: countPriceBag,
+  };
 };
 const reducer = (state = initialState, action) => {
   console.log(action.type);
@@ -77,82 +116,58 @@ const reducer = (state = initialState, action) => {
         productItems: [newItem],
       };
     case "PRODUCT_ADDED_TO_BAG":
-      const bagProductId = action.payload;
-      const bagProduct = state.clothes.find(
-        (product) => product.id === bagProductId
-      );
-      const bagProductIndex = state.bagItems.findIndex(
-        ({ id }) => id === bagProductId
-      );
-      const bagProductItem = state.bagItems[bagProductIndex];
+      return updateOrder(state, action.payload, 1);
 
-      const newBagItem = updateBagItem(bagProduct, bagProductItem);
-
-      ////
-      const updatedItems = updateBagItems(
-        state.bagItems,
-        newBagItem,
-        bagProductIndex
+    case "PRODUCT_ALL_REMOVED_FROM_BAG":
+      const removedItem = state.bagItems.find(
+        ({ id }) => id === action.payload
       );
-      // console.log(newItem.count);
-      // console.log(cartItems.id);
-      let countBag = 0;
-      let countPriceBag = 0;
-      updatedItems.forEach((updatedItem) => {
-        countBag = updatedItem.count + countBag;
-      });
-      updatedItems.forEach((updatedItem) => {
-        countPriceBag = updatedItem.price + countPriceBag;
-      });
-      //
-      return {
-        ...state,
-        bagItems: updateBagItems(state.bagItems, newBagItem, bagProductIndex),
-        orderTotal: countBag,
-        orderTotalPrice: countPriceBag,
-      };
+      return updateOrder(state, action.payload, -removedItem.count);
 
     case "PRODUCT_REMOVED_FROM_BAG":
-      const { bagItems } = state;
-      const bagProductRemovedId = action.payload;
-      const bagItemIndex = bagItems.findIndex(
-        ({ id }) => id === bagProductRemovedId
-      );
+      return updateOrder(state, action.payload, -1);
 
-      // const bagRemovedProduct = state.clothes.find(
-      //   (product) => product.id === bagProductRemovedId
-      // );
+    // const { bagItems } = state;
+    // const bagProductRemovedId = action.payload;
+    // const bagItemIndex = bagItems.findIndex(
+    //   ({ id }) => id === bagProductRemovedId
+    // );
+    ///////////////////
 
-      // const bagRemoveProductItem = state.bagItems[bagItemIndex];
+    // const bagRemovedProduct = state.clothes.find(
+    //   (product) => product.id === bagProductRemovedId
+    // );
 
-      // const newRemovedBagItem = updateBagItem(
-      //   bagRemovedProduct,
-      //   bagRemoveProductItem
-      // );
-      // const updatedRemovedItems = updateBagItems(
-      //   bagItems,
-      //   newRemovedBagItem,
-      //   bagItemIndex
-      // );
-      // let countBagRemove = 0;
-      // let countPriceBagRemove = 0;
-      // updatedRemovedItems.forEach((updatedRemovedItem) => {
-      //   countBagRemove = updatedRemovedItem.count - countBagRemove;
-      // });
-      // updatedRemovedItems.forEach((updatedRemovedItem) => {
-      //   countPriceBagRemove = updatedRemovedItem.price - countPriceBagRemove;
-      // });
+    // const bagRemoveProductItem = state.bagItems[bagItemIndex];
 
-      return {
-        ...state,
-        bagItems: [
-          ...bagItems.slice(0, bagItemIndex),
-          ...bagItems.slice(bagItemIndex + 1),
-        ],
-        // orderTotal: countBagRemove,
-        // orderTotalPrice: countPriceBagRemove,
-      };
-
+    // const newRemovedBagItem = updateBagItem(
+    //   bagRemovedProduct,
+    //   bagRemoveProductItem
+    // );
+    // const updatedRemovedItems = updateBagItems(
+    //   bagItems,
+    //   newRemovedBagItem,
+    //   bagItemIndex
+    // );
+    // let countBagRemove = 0;
+    // let countPriceBagRemove = 0;
+    // updatedRemovedItems.forEach((updatedRemovedItem) => {
+    //   countBagRemove = updatedRemovedItem.count - countBagRemove;
+    // });
+    // updatedRemovedItems.forEach((updatedRemovedItem) => {
+    //   countPriceBagRemove = updatedRemovedItem.price - countPriceBagRemove;
+    // });
+    //////////////////
+    // return {
+    //   ...state,
+    //   bagItems: [
+    //     ...bagItems.slice(0, bagItemIndex),
+    //     ...bagItems.slice(bagItemIndex + 1),
+    //   ],
+    //   // orderTotal: countBagRemove,
+    //   // orderTotalPrice: countPriceBagRemove,
+    // };
+    //////////////////////
     default:
       return state;
   }

@@ -33,6 +33,12 @@ const productRemovedFromBag = (bagProductRemovedId) => {
     payload: bagProductRemovedId,
   };
 };
+const productAllRemovedFromBag = (bagProductRemovedId) => {
+  return {
+    type: "PRODUCT_ALL_REMOVED_FROM_BAG",
+    payload: bagProductRemovedId,
+  };
+};
 export {
   clothesLoaded,
   clothesRequested,
@@ -40,4 +46,5 @@ export {
   onItemSelected,
   productAddedToBag,
   productRemovedFromBag,
+  productAllRemovedFromBag,
 };
