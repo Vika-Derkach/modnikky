@@ -1,8 +1,9 @@
 import React from "react";
+import { Element } from "react-scroll";
 import "./new-arrivals.css";
 const NewArrivals = ({ arr_title, arr_pic1, arr_pic2, arr_pic3, arr_pic4 }) => {
   return (
-    <div className="arrivals">
+    <Element className="arrivals" name="new_arrivals">
       <div className="arrivals__title">{arr_title}</div>
       <div className="arrivals-container">
         <div className="arrivals-picture">
@@ -18,7 +19,7 @@ const NewArrivals = ({ arr_title, arr_pic1, arr_pic2, arr_pic3, arr_pic4 }) => {
           <img src={arr_pic4} alt="" />
         </div>
       </div>
-    </div>
+    </Element>
   );
 };
 export default NewArrivals;

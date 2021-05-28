@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import styles from "./header.module.css";
 
 const Header = ({ totalItems }) => {
@@ -8,13 +9,37 @@ const Header = ({ totalItems }) => {
     <div>
       <div className={styles.header}>
         <div className={styles.header_left}>
-          <a> NEW ARRIVALS</a>
+          <Link to="/" className={styles.header_link}>
+            <ScrollLink
+              activeClass="active"
+              to="new_arrivals"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              {" "}
+              NEW ARRIVALS
+            </ScrollLink>
+          </Link>
+          <Link to="/" className={styles.header_link}>
+            <ScrollLink
+              activeClass="active"
+              to="insta-shop"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              SHOP
+            </ScrollLink>
+          </Link>
 
-          <a href="">SHOP</a>
-
-          <Link to="/catalogue">COLLECTIONS</Link>
+          <Link to="/catalogue" className={styles.header_link}>
+            COLLECTIONS
+          </Link>
         </div>
-        <Link to="/" className={styles.logo} href="">
+        <Link to="/" className={styles.logo}>
           MODNIKKY
         </Link>
         <div className={styles.header_right}>
@@ -24,9 +49,13 @@ const Header = ({ totalItems }) => {
             placeholder="SEARCH"
           />
 
-          <Link to="/sign-up">SIGN IN</Link>
+          <Link to="/sign-up" className={styles.header_link}>
+            SIGN IN
+          </Link>
 
-          <Link to="/bag">BAG ({totalItems})</Link>
+          <Link to="/bag" className={styles.header_link}>
+            BAG ({totalItems})
+          </Link>
         </div>
       </div>
     </div>

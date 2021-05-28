@@ -77,9 +77,12 @@
   font-size: 1.4rem;
   line-height: 2rem;
   letter-spacing: 0.04em;
+  margin-bottom: 2.5rem;
 }
 .footer-col .footer__link {
   text-decoration: none;
+  color: #000f08;
+  margin-bottom: 1.6rem;
 }
 .footer-col .footer__link:hover {
   color: #8c8c8c;

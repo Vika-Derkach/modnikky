@@ -1,4 +1,5 @@
 import React from "react";
+import { Element } from "react-scroll";
 import arr_pic5 from "./img/bikini.jpg";
 import arr_pic2 from "./img/hoodie.jpg";
 import arr_pic4 from "./img/jacket.jpg";
@@ -7,7 +8,7 @@ import arr_pic3 from "./img/jeans2.jpg";
 import "./insta-shop.css";
 const InstaShop = () => {
   return (
-    <div className="insta-shop">
+    <Element className="insta-shop" name="insta-shop">
       <div className="insta-shop__title">
         SHOP IMSTAGRAM{" "}
         <a href="https://instagram.com/midnight_custom?igshid=1auy6xgqfup8n">
@@ -36,7 +37,7 @@ const InstaShop = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Element>
   );
 };
 export default InstaShop;
