@@ -29,6 +29,20 @@ export default class ModnikkyService {
       color: "BLUE",
       kind: "jeans",
     },
+    {
+      id: 3,
+      title: "Women’s Black Leather Biker Jacket",
+      price: 250,
+      frontPicture:
+        "https://i.pinimg.com/originals/ce/4e/b9/ce4eb9a17ef3b76364c3a1d8fd81ce15.jpg",
+      additionalPicture:
+        "https://images-na.ssl-images-amazon.com/images/I/71-6g5arnVL._AC_UL1500_.jpg",
+      fabric: "LEATHER",
+      product_descr:
+        "If you are looking for a traditional style leather biker jacket with a difference then this is the perfect choice for you. Manufactured from the highest quality lamb nappa which is perfect to create this popular and beautifully feminine cut.",
+      color: "BLACK",
+      kind: "jacket",
+    },
   ];
   getClothes() {
     return new Promise((resolve, reject) => {

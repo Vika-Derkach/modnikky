@@ -1,7 +1,10 @@
-.categories-container {
+.categories {
+  position: sticky;
+  top: 0.8rem;
+}
+.categories .categories-container {
   display: flex;
   flex-direction: column;
-  /* position: sticky; */
 }
 .categories-container .button-categories {
   padding-top: 0.8rem;
