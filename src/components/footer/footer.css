@@ -5,16 +5,16 @@
 .footer-text {
   text-align: center;
   margin-bottom: 5rem;
+  font-weight: 500;
 }
 .footer-text .footer-text__title {
   font-size: 1.4rem;
-  line-height: 1.4rem;
+  line-height: 2rem;
   letter-spacing: 0.04em;
   color: #000f08;
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
 }
 .footer-text .footer-text__desc {
-  font-weight: 400;
   font-size: 1rem;
   line-height: 1rem;
   margin-bottom: 3rem;
@@ -59,10 +59,14 @@
 .footer-col {
   display: flex;
   justify-content: space-evenly;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1rem;
   line-height: 1rem;
   color: #000f08;
+  text-decoration: none;
+}
+.footer-col:hover {
+  text-decoration: none;
 }
 .footer-col div {
   display: flex;
@@ -71,6 +75,12 @@
 .footer-col .footer__title {
   font-weight: 500;
   font-size: 1.4rem;
-  line-height: 1.8rem;
+  line-height: 2rem;
   letter-spacing: 0.04em;
+}
+.footer-col .footer__link {
+  text-decoration: none;
+}
+.footer-col .footer__link:hover {
+  color: #8c8c8c;
 }

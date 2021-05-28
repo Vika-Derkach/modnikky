@@ -10,7 +10,7 @@ const CustomerService = () => {
     <div className="customer-service">
       <h2 className="customer-service__title">Customer Service</h2>
       <div id="our_order" className="customer-service__item">
-        <Element name="our_orderz" className="customer-service__item__text">
+        <Element name="our_order" className="customer-service__item__text">
           ORDER ISSUES
         </Element>
         <OrderIssue />
