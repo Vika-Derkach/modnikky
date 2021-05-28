@@ -5,6 +5,7 @@ import {
   clothesLoaded,
   clothesRequested,
   onItemSelected,
+  searchClothes,
 } from "../../actions";
 import ErrorIndicator from "../error-indicator";
 import GoodsItem from "../goods-item";
@@ -20,6 +21,7 @@ const Goods = ({
   clothesRequested,
   clothesError,
   onItemSelected,
+  searchClothes,
 }) => {
   useEffect(() => {
     clothesRequested();
@@ -28,8 +30,7 @@ const Goods = ({
       .then((data) => clothesLoaded(data))
       .catch((err) => clothesError(err));
   }, []);
-  // const { modnikkyService } = this.props;
-  // console.log(modnikkyService);
+
   if (loading) {
     return <Spinner />;
   }
@@ -56,21 +57,13 @@ const Goods = ({
 const mapStateToProps = ({ clothes, loading, error }) => {
   return { clothes, loading, error };
 };
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     clothesLoaded: (newClothes) => {
-//       dispatch({
-//         type: "CLOTHES_LOADED",
-//         payload: newClothes,
-//       });
-//     },
-//   };
-// };
+
 const mapDispatchToProps = {
   clothesLoaded: clothesLoaded,
   clothesRequested: clothesRequested,
   clothesError: clothesError,
   onItemSelected: (id) => onItemSelected(id),
+  searchClothes: searchClothes,
 };
 export default withModnikkyService()(
   connect(mapStateToProps, mapDispatchToProps)(Goods)

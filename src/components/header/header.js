@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import styles from "./header.module.css";
 
-const Header = ({ totalItems }) => {
+const Header = ({ totalItems, search }) => {
+  //   const onSearchChange = (e) => {
+  // const search = e.target
+  //   }
   return (
     <div>
       <div className={styles.header}>
@@ -47,6 +50,8 @@ const Header = ({ totalItems }) => {
             className={styles.header_right__search}
             type="text"
             placeholder="SEARCH"
+            value={search}
+            // onChange={onSearchChange}
           />
 
           <Link to="/sign-up" className={styles.header_link}>
@@ -61,9 +66,10 @@ const Header = ({ totalItems }) => {
     </div>
   );
 };
-const mapStateToProps = ({ orderTotal }) => {
+const mapStateToProps = ({ orderTotal, searchClothes }) => {
   return {
     totalItems: orderTotal,
+    search: searchClothes,
   };
 };
 

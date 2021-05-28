@@ -39,6 +39,12 @@ const productAllRemovedFromBag = (bagProductRemovedId) => {
     payload: bagProductRemovedId,
   };
 };
+const searchClothes = (newClothes) => {
+  return {
+    type: "SEARCH_CLOTHES",
+    payload: newClothes,
+  };
+};
 export {
   clothesLoaded,
   clothesRequested,
@@ -47,4 +53,5 @@ export {
   productAddedToBag,
   productRemovedFromBag,
   productAllRemovedFromBag,
+  searchClothes,
 };
