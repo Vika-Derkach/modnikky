@@ -1,5 +1,8 @@
 .customer-categories {
   width: 25%;
+
+  /* position: sticky;
+  top: 20px; */
 }
 .customer-categories__title {
   font-weight: 500;
@@ -7,11 +10,27 @@
   line-height: 1rem;
   color: #8c8c8c;
   margin-bottom: 3rem;
+  /* position: sticky;
+  top: 10px; */
 }
-.customer-categories__item {
+.customer-categories__items {
+  position: sticky;
+  top: 20px;
+}
+.customer-categories__items .customer-categories__item {
   font-weight: 500;
   font-size: 1.4rem;
   line-height: 2rem;
-  color: #000f08;
+
   margin-bottom: 1.6rem;
+}
+/* .customer-categories__item:hover {
+  color: #8c8c8c;
+} */
+.customer-categories__item .customer-categories__link {
+  text-decoration: none;
+  color: #000f08;
+}
+.customer-categories__item .customer-categories__link:hover {
+  color: #8c8c8c;
 }

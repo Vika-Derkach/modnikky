@@ -3,7 +3,7 @@ import TreeViewCategories from "../tree-view-categories";
 import "./categories.css";
 const Categories = () => {
   return (
-    <div>
+    <div className="categories">
       <h2>Categories</h2>
       <div className="categories-container">
         <button className="button-categories">TOPS</button>

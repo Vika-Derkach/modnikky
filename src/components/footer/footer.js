@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import "./footer.css";
 const Footer = () => {
   const scrollToTop = () => {
@@ -31,7 +32,19 @@ const Footer = () => {
             <div className="footer__title">CUSTOMER SERVICE</div>{" "}
             <a href="">CONTACT</a>
             <a href="">TRACK ORDER</a>
-            <a href="">DELIVERY & RETURNS</a>
+            <Link to="/customer-service">
+              {" "}
+              <ScrollLink
+                activeClass="active"
+                to="our_delivery"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                DELIVERY & RETURNS
+              </ScrollLink>
+            </Link>
             <a href="">PAYMENT</a>
             <a href="">PAYMENT</a>
             <a href="">FAQ</a>
