@@ -2,12 +2,20 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
+import { bindActionCreators } from "redux";
+import { searchClothes } from "../../actions";
 import styles from "./header.module.css";
 
-const Header = ({ totalItems, search }) => {
-  //   const onSearchChange = (e) => {
-  // const search = e.target
-  //   }
+const Header = ({ totalItems, searchClothes, searchValue }) => {
+  ///
+  // const [term, setTerm] = useState("");
+  // const onSearchChange = (e) => {
+  //   const term = e.target.value;
+  //   setTerm({ term });
+  //   // search.onSearchChange(term);
+  // };
+  // search.onSearchChange(term);
+  console.log(searchClothes());
   return (
     <div>
       <div className={styles.header}>
@@ -50,8 +58,8 @@ const Header = ({ totalItems, search }) => {
             className={styles.header_right__search}
             type="text"
             placeholder="SEARCH"
-            value={search}
-            // onChange={onSearchChange}
+            value={searchValue}
+            onChange={(e) => searchClothes(e.target.value)}
           />
 
           <Link to="/sign-up" className={styles.header_link}>
@@ -69,8 +77,10 @@ const Header = ({ totalItems, search }) => {
 const mapStateToProps = ({ orderTotal, searchClothes }) => {
   return {
     totalItems: orderTotal,
-    search: searchClothes,
+    searchValue: searchClothes,
   };
 };
-
-export default connect(mapStateToProps)(Header);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ searchClothes }, dispatch);
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -7,7 +7,7 @@ const initialState = {
   bagItems: [],
   orderTotal: 0,
   orderTotalPrice: 0,
-  searchClothes: "Black",
+  searchClothes: "lue",
 };
 const updateBagItems = (bagItems, item, idx) => {
   /// удаляє елемент з масива
@@ -129,19 +129,24 @@ const reducer = (state = initialState, action) => {
     case "PRODUCT_REMOVED_FROM_BAG":
       return updateOrder(state, action.payload, -1);
     case "SEARCH_CLOTHES":
+      const { value } = action;
+
       const { clothes, searchClothes } = state;
-      const search = (items, searchClothes) => {
+      console.log(clothes);
+      const search = (clothes, searchClothes) => {
         if (searchClothes.length === 0) {
-          return items;
+          return clothes;
         }
-        return items.filter((item) => {
-          return item.title.indexOf(searchClothes) > -1;
+        return clothes.filter((cloth) => {
+          return cloth.title.indexOf(searchClothes) > -1;
         });
       };
       const visibleClothes = search(clothes, searchClothes);
+      console.log(visibleClothes);
+      console.log("nvbbgbv");
       return {
         ...state,
-        clothes: [visibleClothes],
+        clothes: visibleClothes,
       };
 
     default:

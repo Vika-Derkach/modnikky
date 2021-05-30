@@ -37,11 +37,13 @@ const Goods = ({
   if (error) {
     return <ErrorIndicator />;
   }
-  // console.log(onItemSelected());
+  console.log(searchClothes);
+
   return (
     <div>
       <div className="goods-item-container">
         {clothes.map((cloth) => {
+          console.log(cloth.title);
           return (
             <GoodsItem
               cloth={cloth}
@@ -63,7 +65,7 @@ const mapDispatchToProps = {
   clothesRequested: clothesRequested,
   clothesError: clothesError,
   onItemSelected: (id) => onItemSelected(id),
-  searchClothes: searchClothes,
+  searchClothes: () => searchClothes(),
 };
 export default withModnikkyService()(
   connect(mapStateToProps, mapDispatchToProps)(Goods)
