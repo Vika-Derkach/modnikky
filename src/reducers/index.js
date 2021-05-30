@@ -7,7 +7,7 @@ const initialState = {
   bagItems: [],
   orderTotal: 0,
   orderTotalPrice: 0,
-  searchClothes: "lue",
+  searchClothes: "",
 };
 const updateBagItems = (bagItems, item, idx) => {
   /// удаляє елемент з масива
@@ -130,6 +130,7 @@ const reducer = (state = initialState, action) => {
       return updateOrder(state, action.payload, -1);
     case "SEARCH_CLOTHES":
       const { value } = action;
+      // const works = state.clothes.filter((val) => val.title.includes(value));
 
       const { clothes, searchClothes } = state;
       console.log(clothes);
@@ -142,13 +143,28 @@ const reducer = (state = initialState, action) => {
         });
       };
       const visibleClothes = search(clothes, searchClothes);
+      // const visibleClothes = clothes.filter((val) => {
+      //   return val.title.includes(searchClothes);
+      // });
+      // search.onSearchChange(term);
+
       console.log(visibleClothes);
       console.log("nvbbgbv");
+      // const value1 =
       return {
         ...state,
         clothes: visibleClothes,
-      };
 
+        searchClothes: "ack",
+        // searchClothes: searchClothes,
+      };
+    case "ON_SEARCH_CHANGES":
+      // const { searchClothes } = state;
+      return {
+        ...state,
+        searchClothes: "ack",
+        // searchClothes: value,
+      };
     default:
       return state;
   }

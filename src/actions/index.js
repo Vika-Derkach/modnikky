@@ -43,7 +43,14 @@ const searchClothes = (value) => {
   return {
     type: "SEARCH_CLOTHES",
     value,
-    // payload: newClothes,
+
+    // payload: value,
+  };
+};
+const onSearchChanges = (value) => {
+  return {
+    type: "ON_SEARCH_CHANGES",
+    payload: value,
   };
 };
 export {
@@ -55,4 +62,5 @@ export {
   productRemovedFromBag,
   productAllRemovedFromBag,
   searchClothes,
+  onSearchChanges,
 };

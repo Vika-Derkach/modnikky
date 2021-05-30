@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { bindActionCreators } from "redux";
-import { searchClothes } from "../../actions";
+import { onSearchChanges, searchClothes } from "../../actions";
 import styles from "./header.module.css";
 
-const Header = ({ totalItems, searchClothes, searchValue }) => {
+const Header = ({
+  totalItems,
+  searchClothes,
+  searchValue,
+  onSearchChanges,
+}) => {
   ///
-  // const [term, setTerm] = useState("");
-  // const onSearchChange = (e) => {
-  //   const term = e.target.value;
-  //   setTerm({ term });
-  //   // search.onSearchChange(term);
-  // };
+  const [term, setTerm] = useState("lue");
+  const onSearchChange = (e) => {
+    const term = e.target.value;
+    setTerm({ term });
+    // searchClothes(term);
+    // search.onSearchChange(term);
+  };
+
   // search.onSearchChange(term);
   console.log(searchClothes());
   return (
@@ -59,6 +66,7 @@ const Header = ({ totalItems, searchClothes, searchValue }) => {
             type="text"
             placeholder="SEARCH"
             value={searchValue}
+            // onChange={onSearchChange}
             onChange={(e) => searchClothes(e.target.value)}
           />
 
@@ -74,13 +82,14 @@ const Header = ({ totalItems, searchClothes, searchValue }) => {
     </div>
   );
 };
-const mapStateToProps = ({ orderTotal, searchClothes }) => {
+const mapStateToProps = ({ orderTotal, searchClothes, clothes }) => {
   return {
     totalItems: orderTotal,
+    // searchValue: clothes.value,
     searchValue: searchClothes,
   };
 };
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ searchClothes }, dispatch);
+  return bindActionCreators({ searchClothes, onSearchChanges }, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
