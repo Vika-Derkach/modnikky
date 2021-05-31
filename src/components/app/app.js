@@ -17,6 +17,7 @@ const App = ({ modnikkyService }) => {
     <div>
       <ErrorBoundry>
         <Header />
+        <ScrollTopArrow />
         <Switch>
           <Route path="/" component={HomePage} exact />
           <Route path="/catalogue" component={CatalogPage} />
@@ -35,7 +36,7 @@ const App = ({ modnikkyService }) => {
           <Route path="/new-arrivals" component={NewArrivals} />
           <Route render={() => <h2>Page is not found</h2>} />
         </Switch>
-        <ScrollTopArrow />
+
         <Footer />
       </ErrorBoundry>
     </div>
