@@ -8,10 +8,11 @@ import Footer from "../footer";
 import Header from "../header";
 import { withModnikkyService } from "../hoc";
 import HomePage from "../home-page";
+import NewArrivals from "../new-arrivals";
 import ProductPage from "../product-page";
+import ScrollTopArrow from "../scroll-top-arrow";
 import SingUpModal from "../sign-up-modal";
 const App = ({ modnikkyService }) => {
-  // console.log(modnikkyService.getClothes());
   return (
     <div>
       <ErrorBoundry>
@@ -31,9 +32,10 @@ const App = ({ modnikkyService }) => {
           <Route path="/bag" component={Bag} />
           <Route path="/sign-up" component={SingUpModal} />
           <Route path="/customer-service" component={CustomerServicePage} />
+          <Route path="/new-arrivals" component={NewArrivals} />
           <Route render={() => <h2>Page is not found</h2>} />
         </Switch>
-
+        <ScrollTopArrow />
         <Footer />
       </ErrorBoundry>
     </div>

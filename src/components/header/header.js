@@ -11,7 +11,7 @@ const Header = ({ totalItems, searchClothes, searchValue }) => {
     <div>
       <div className={styles.header}>
         <div className={styles.header_left}>
-          <Link to="/" className={styles.header_link}>
+          <Link to="/new-arrivals" className={styles.header_link}>
             <ScrollLink
               activeClass="active"
               to="new_arrivals"
@@ -20,7 +20,6 @@ const Header = ({ totalItems, searchClothes, searchValue }) => {
               offset={-70}
               duration={500}
             >
-              {" "}
               NEW ARRIVALS
             </ScrollLink>
           </Link>
