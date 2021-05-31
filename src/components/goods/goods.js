@@ -21,7 +21,6 @@ const Goods = ({
   clothesRequested,
   clothesError,
   onItemSelected,
-  searchClothes,
 }) => {
   useEffect(() => {
     clothesRequested();
@@ -37,7 +36,6 @@ const Goods = ({
   if (error) {
     return <ErrorIndicator />;
   }
-  console.log(searchClothes);
 
   return (
     <div>
@@ -65,7 +63,8 @@ const mapDispatchToProps = {
   clothesRequested: clothesRequested,
   clothesError: clothesError,
   onItemSelected: (id) => onItemSelected(id),
-  searchClothes: () => searchClothes(),
+  ///search fillter
+  searchClothes: searchClothes,
 };
 export default withModnikkyService()(
   connect(mapStateToProps, mapDispatchToProps)(Goods)

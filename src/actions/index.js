@@ -39,20 +39,14 @@ const productAllRemovedFromBag = (bagProductRemovedId) => {
     payload: bagProductRemovedId,
   };
 };
+///search fillter
 const searchClothes = (value) => {
   return {
     type: "SEARCH_CLOTHES",
     value,
+  };
+};
 
-    // payload: value,
-  };
-};
-const onSearchChanges = (value) => {
-  return {
-    type: "ON_SEARCH_CHANGES",
-    payload: value,
-  };
-};
 export {
   clothesLoaded,
   clothesRequested,
@@ -62,5 +56,4 @@ export {
   productRemovedFromBag,
   productAllRemovedFromBag,
   searchClothes,
-  onSearchChanges,
 };

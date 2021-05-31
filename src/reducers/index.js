@@ -1,4 +1,5 @@
 const initialState = {
+  clothesFromDb: [],
   clothes: [],
   loading: true,
   error: null,
@@ -7,7 +8,7 @@ const initialState = {
   bagItems: [],
   orderTotal: 0,
   orderTotalPrice: 0,
-  searchClothes: "",
+  searchClothesValue: "",
 };
 const updateBagItems = (bagItems, item, idx) => {
   /// удаляє елемент з масива
@@ -82,6 +83,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         clothes: [],
+        clothesFromDb: [],
         loading: true,
         error: null,
       };
@@ -89,6 +91,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         clothes: action.payload,
+        clothesFromDb: action.payload,
         loading: false,
         error: null,
       };
@@ -101,7 +104,7 @@ const reducer = (state = initialState, action) => {
       };
     case "ON_ITEM_SELECTED":
       const clothId = action.payload;
-      const cloth = state.clothes.find((cloth) => cloth.id === clothId);
+      const cloth = state.clothesFromDb.find((cloth) => cloth.id === clothId);
       const newItem = {
         id: cloth.id,
         title: cloth.title,
@@ -128,43 +131,30 @@ const reducer = (state = initialState, action) => {
 
     case "PRODUCT_REMOVED_FROM_BAG":
       return updateOrder(state, action.payload, -1);
-    case "SEARCH_CLOTHES":
-      const { value } = action;
-      // const works = state.clothes.filter((val) => val.title.includes(value));
 
-      const { clothes, searchClothes } = state;
-      console.log(clothes);
-      const search = (clothes, searchClothes) => {
-        if (searchClothes.length === 0) {
+    case "SEARCH_CLOTHES":
+      ///search fillter
+      const { value = "" } = action;
+
+      const { clothes, searchClothesValue, clothesFromDb } = state;
+
+      const search = (clothes, searchClothesValue) => {
+        if (searchClothesValue.length === 0) {
           return clothes;
         }
         return clothes.filter((cloth) => {
-          return cloth.title.indexOf(searchClothes) > -1;
+          return cloth.title.indexOf(searchClothesValue) > -1;
         });
       };
-      const visibleClothes = search(clothes, searchClothes);
-      // const visibleClothes = clothes.filter((val) => {
-      //   return val.title.includes(searchClothes);
-      // });
-      // search.onSearchChange(term);
+      const visibleClothes = search(clothesFromDb, value);
 
-      console.log(visibleClothes);
-      console.log("nvbbgbv");
-      // const value1 =
       return {
         ...state,
         clothes: visibleClothes,
 
-        searchClothes: "ack",
-        // searchClothes: searchClothes,
+        searchClothesValue: value,
       };
-    case "ON_SEARCH_CHANGES":
-      // const { searchClothes } = state;
-      return {
-        ...state,
-        searchClothes: "ack",
-        // searchClothes: value,
-      };
+
     default:
       return state;
   }
