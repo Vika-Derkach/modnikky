@@ -143,7 +143,11 @@ const reducer = (state = initialState, action) => {
           return clothes;
         }
         return clothes.filter((cloth) => {
-          return cloth.title.indexOf(searchClothesValue) > -1;
+          return (
+            cloth.title
+              .toLowerCase()
+              .indexOf(searchClothesValue.toLowerCase()) > -1
+          );
         });
       };
       const visibleClothes = search(clothesFromDb, value);
@@ -151,7 +155,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         clothes: visibleClothes,
-
         searchClothesValue: value,
       };
 
