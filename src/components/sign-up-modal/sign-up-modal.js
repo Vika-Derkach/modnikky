@@ -1,17 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ContainedButton from "../contained-button";
 import "./sign-up-modal.css";
 const SingUpModal = () => {
   const button_text = "SIGN UP";
+
   return (
     <div className="overlay">
       <div className="popup">
         <div className="popup-title">CREATE ACCOUNT</div>
 
-        <div className="popup-close"> &times; </div>
+        <Link to="/" className="popup-close">
+          {" "}
+          &times;{" "}
+        </Link>
 
         <div className="popup-form">
-          <form action="#" className="main-form">
+          <form
+            method="post"
+            action="#"
+            enctype="multipart/form-data"
+            autocomplete="off"
+            className="main-form"
+          >
             <input
               type="text"
               placeholder="First Name"

@@ -45,14 +45,15 @@ const Header = ({ totalItems, searchClothes, searchValue }) => {
         </Link>
         <div className={styles.header_right}>
           {/* search fillter */}
-          <input
-            className={styles.header_right__search}
-            type="text"
-            placeholder="SEARCH"
-            value={searchValue}
-            onChange={(e) => searchClothes(e.target.value)}
-          />
-
+          <Link to="/catalogue">
+            <input
+              className={styles.header_right__search}
+              type="text"
+              placeholder="SEARCH"
+              value={searchValue}
+              onChange={(e) => searchClothes(e.target.value)}
+            />
+          </Link>
           <Link to="/sign-up" className={styles.header_link}>
             SIGN IN
           </Link>

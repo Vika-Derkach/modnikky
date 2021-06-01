@@ -24,6 +24,7 @@
   color: #000f08;
   font-weight: 300;
   cursor: pointer;
+  text-decoration: none;
 }
 .overlay .popup .popup-close:hover {
   color: #8c8c8c;

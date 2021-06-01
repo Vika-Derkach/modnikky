@@ -12,6 +12,7 @@ import NewArrivals from "../new-arrivals";
 import ProductPage from "../product-page";
 import ScrollTopArrow from "../scroll-top-arrow";
 import SingUpModal from "../sign-up-modal";
+import "./app.css";
 const App = ({ modnikkyService }) => {
   return (
     <div>
@@ -34,7 +35,16 @@ const App = ({ modnikkyService }) => {
           <Route path="/sign-up" component={SingUpModal} />
           <Route path="/customer-service" component={CustomerServicePage} />
           <Route path="/new-arrivals" component={NewArrivals} />
-          <Route render={() => <h2>Page is not found</h2>} />
+          <Route
+            render={() => (
+              <div className="mistake-page">
+                <img
+                  src="https://blog.thomasnet.com/hs-fs/hubfs/shutterstock_774749455.jpg?width=600&name=shutterstock_774749455.jpg"
+                  alt="404"
+                />{" "}
+              </div>
+            )}
+          />
         </Switch>
 
         <Footer />
