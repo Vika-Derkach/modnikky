@@ -4,3 +4,10 @@ body {
 .mistake-page {
   text-align: center;
 }
+.size-page {
+  width: 90wv;
+  text-align: center;
+}
+.size-page img {
+  width: 100%;
+}

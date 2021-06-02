@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     maxWidth: 400,
   },
 });
-export default function TreeViewCategories({ onFilterSize }) {
+export default function TreeViewCategories({ onFilterSize, filterSize }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState([]);
   const [selected, setSelected] = React.useState([]);
@@ -31,9 +31,14 @@ export default function TreeViewCategories({ onFilterSize }) {
     { name: "L", nodeId: "4", labelSize: "L" },
     { name: "XL", nodeId: "5", labelSize: "XL" },
   ];
+
   const buttonsSize = buttonsFilterSize.map(({ name, labelSize, nodeId }) => {
+    // const isActive = filterSize === name;
+
+    // const clazz = isActive ? "button-active-size" : "button-nonactive-size";
     return (
       <TreeItem
+        // className={`${clazz}`}
         key={name}
         nodeId={nodeId}
         label={labelSize}

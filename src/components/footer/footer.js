@@ -36,9 +36,13 @@ const Footer = () => {
           >
             <div className="footer__title">CUSTOMER SERVICE</div>{" "}
           </Link>
-          <a href="" className="footer__link">
-            CONTACT
-          </a>
+          <Link
+            onClick={scrollToTop}
+            to="/black-Friday"
+            className="footer__link"
+          >
+            BLACK FRIDAY
+          </Link>
           <Link to="/customer-service" className="footer__link">
             {" "}
             <ScrollLink
@@ -96,10 +100,18 @@ const Footer = () => {
 
         <div className="footer-info">
           <div className="footer__title">INFO</div>
-          <a href="">GIFT VOUCHERS</a>
-          <a href="">SIZE GUIDE</a>
-          <a href="">CAREERS AT MODNIKKY</a>
-          <a href="">ABOUT US</a>
+          <Link to="/culture" onClick={scrollToTop} className="footer__link">
+            CULTURE
+          </Link>
+          <Link to="/size-guide" onClick={scrollToTop} className="footer__link">
+            SIZE GUIDE
+          </Link>
+          <Link to="/career" onClick={scrollToTop} className="footer__link">
+            CAREERS AT MODNIKKY
+          </Link>
+          <Link to="/about-us" onClick={scrollToTop} className="footer__link">
+            ABOUT US
+          </Link>
           <Link to="/customer-service" className="footer__link">
             <ScrollLink
               activeClass="active"
@@ -120,6 +132,8 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/profile.php?id=100017338952199"
               className="footer__link"
+              target="_blank"
+              rel="noreferrer"
             >
               {" "}
               <i className="fa fa-facebook-square" aria-hidden="true"></i>{" "}
@@ -127,7 +141,12 @@ const Footer = () => {
             </a>
           </div>
           <div className="footer-info__network">
-            <a href="https://twitter.com/?lang=ru" className="footer__link">
+            <a
+              href="https://twitter.com/?lang=ru"
+              className="footer__link"
+              target="_blank"
+              rel="noreferrer"
+            >
               {" "}
               <i className="fa fa-twitter" aria-hidden="true"></i> TWITTER
             </a>
@@ -135,7 +154,9 @@ const Footer = () => {
           <div className="footer-info__network">
             <a
               href="https://www.instagram.com/_viki_der/?hl=ru"
+              target="_blank"
               className="footer__link"
+              rel="noreferrer"
             >
               <i className="fa fa-instagram" aria-hidden="true"></i> INSTAGRAM
             </a>
@@ -151,7 +172,9 @@ const Footer = () => {
           </a>
           <a
             className="footer__link"
+            target="_blank"
             href="https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%9B%D0%B5%D1%81%D1%8F+%D0%9A%D1%83%D1%80%D0%B1%D0%B0%D1%81%D0%B0,+7,+%D0%A2%D0%B5%D1%80%D0%BD%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C,+%D0%A2%D0%B5%D1%80%D0%BD%D0%BE%D0%BF%D0%BE%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+46000/@49.5729275,25.6399427,17z/data=!3m1!4b1!4m5!3m4!1s0x473033d86567518f:0xfe678e9806a578da!8m2!3d49.5729275!4d25.6421314"
+            rel="noreferrer"
           >
             Visit us at Kurbasa 7, <br /> Ternopil, Ukraine
           </a>

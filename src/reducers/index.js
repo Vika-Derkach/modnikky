@@ -10,7 +10,7 @@ const initialState = {
   orderTotalPrice: 0,
   searchClothesValue: "",
   filterClothes: "",
-  filterSize: "S",
+  filterSize: "",
 };
 const updateBagItems = (bagItems, item, idx) => {
   /// удаляє елемент з масива
@@ -217,7 +217,6 @@ const reducer = (state = initialState, action) => {
       };
     case "ON_FILTER_CLOTHES":
       const { clothName = "" } = action;
-      const { filterClothes } = state;
 
       const filteredClothes = filter(state.clothesFromDb, clothName);
       return {
@@ -229,11 +228,10 @@ const reducer = (state = initialState, action) => {
       const { sizeName = "" } = action;
       const { filterSize } = state;
 
-      const filteredSized =
-        //  filter(
-        filterSized(state.clothesFromDb, sizeName);
-      //   state.filterClothes
-      // );
+      const filteredSized = filter(
+        filterSized(state.clothesFromDb, sizeName),
+        state.filterClothes
+      );
       return {
         ...state,
         clothes: filteredSized,

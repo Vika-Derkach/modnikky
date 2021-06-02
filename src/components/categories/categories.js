@@ -4,7 +4,12 @@ import { onFilterClothes, onFilterSize } from "../../actions";
 import CategoriesClothesFilter from "../categories-clothes-filter";
 import TreeViewCategories from "../tree-view-categories";
 import "./categories.css";
-const Categories = ({ filterClothes, onFilterClothes, onFilterSize }) => {
+const Categories = ({
+  filterClothes,
+  onFilterClothes,
+  onFilterSize,
+  filterSize,
+}) => {
   return (
     <div className="categories">
       <h2>Categories</h2>
@@ -17,15 +22,19 @@ const Categories = ({ filterClothes, onFilterClothes, onFilterSize }) => {
         {/* <button className="button-categories">SALE</button> */}
 
         <div className="filters-categories">FILTERS</div>
-        <TreeViewCategories onFilterSize={onFilterSize} />
+        <TreeViewCategories
+          onFilterSize={onFilterSize}
+          filterSize={filterSize}
+        />
       </div>
     </div>
   );
 };
 
-const mapStateToProps = ({ filterClothes }) => {
+const mapStateToProps = ({ filterClothes, filterSize }) => {
   return {
     filterClothes: filterClothes,
+    filterSize: filterSize,
   };
 };
 
