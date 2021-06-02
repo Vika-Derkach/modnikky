@@ -1,0 +1,29 @@
+.categories-container {
+  display: flex;
+  flex-direction: column;
+}
+.categories-container .button-categories {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  /* color: #000f08; */
+  background-color: #fff;
+  border: none;
+  text-align: left;
+}
+.categories-container .button-categories:hover {
+  color: rgb(142, 120, 127);
+}
+.button-active {
+  color: #8c8c8c;
+}
+.button-nonactive {
+  color: #000f08;
+}
+
+.button-categories:active,
+.button-categories:focus {
+  outline: none;
+}
