@@ -41,7 +41,6 @@ const Goods = ({
     <div>
       <div className="goods-item-container">
         {clothes.map((cloth) => {
-          console.log(cloth.title);
           return (
             <GoodsItem
               cloth={cloth}

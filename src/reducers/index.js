@@ -9,7 +9,7 @@ const initialState = {
   orderTotal: 0,
   orderTotalPrice: 0,
   searchClothesValue: "",
-  filterClothes: "jeans",
+  filterClothes: "",
 };
 const updateBagItems = (bagItems, item, idx) => {
   /// удаляє елемент з масива
@@ -79,10 +79,32 @@ const updateOrder = (state, bagProductId, quantity) => {
 //filter
 const filter = (items, filter) => {
   switch (filter) {
+    case "shop-all":
+      return items;
     case "shorts":
       return items.filter((item) => item.kind === "shorts");
     case "jeans":
       return items.filter((item) => item.kind === "jeans");
+    case "jacket":
+      return items.filter((item) => item.kind === "jacket");
+    case "top":
+      return items.filter((item) => item.kind === "top");
+    case "tee-and-trank":
+      return items.filter((item) => item.kind === "tee-and-trank");
+    case "shirt":
+      return items.filter((item) => item.kind === "shirt");
+    case "dress":
+      return items.filter((item) => item.kind === "dress");
+    case "knitwear":
+      return items.filter((item) => item.kind === "knitwear");
+    case "jumpsuit":
+      return items.filter((item) => item.kind === "jumpsuit");
+    case "bottom":
+      return items.filter((item) => item.kind === "bottom");
+    case "hoodie":
+      return items.filter((item) => item.kind === "hoodie");
+    case "skirt":
+      return items.filter((item) => item.kind === "skirt");
 
     default:
       return items;
@@ -149,7 +171,7 @@ const reducer = (state = initialState, action) => {
       ///search fillter
       const { value = "" } = action;
 
-      const { clothes, searchClothesValue, clothesFromDb } = state;
+      const { clothesFromDb } = state;
 
       const search = (clothes, searchClothesValue) => {
         if (searchClothesValue.length === 0) {
@@ -174,11 +196,14 @@ const reducer = (state = initialState, action) => {
         searchClothesValue: value,
       };
     case "ON_FILTER_CLOTHES":
+      const { clothName = "" } = action;
       const { filterClothes } = state;
-      const filteredClothes = filter(clothesFromDb, filterClothes);
+
+      const filteredClothes = filter(state.clothesFromDb, clothName);
       return {
         ...state,
         clothes: filteredClothes,
+        filterClothes: clothName,
       };
     default:
       return state;

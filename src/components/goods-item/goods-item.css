@@ -7,4 +7,5 @@
 }
 .good-item img:hover {
   box-shadow: 10px 10px 10px rgba(140, 140, 140, 0.4);
+  transition: 0.5s;
 }

@@ -46,9 +46,10 @@ const searchClothes = (value) => {
     value,
   };
 };
-const onFilterClothes = () => {
+const onFilterClothes = (clothName) => {
   return {
     type: "ON_FILTER_CLOTHES",
+    clothName,
   };
 };
 export {

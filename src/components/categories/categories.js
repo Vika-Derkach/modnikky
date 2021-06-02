@@ -1,27 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
 import { onFilterClothes } from "../../actions";
+import { withModnikkyService } from "../hoc";
 import TreeViewCategories from "../tree-view-categories";
 import "./categories.css";
-const Categories = () => {
+const Categories = ({ filterClothes, onFilterClothes }) => {
   return (
     <div className="categories">
       <h2>Categories</h2>
       <div className="categories-container">
-        <button className="button-categories">TOPS</button>
-        <button className="button-categories">TEES AND TANKS</button>
-        <button className="button-categories">SHIRTS</button>
-        <button className="button-categories">DRESSES</button>
-        <button className="button-categories">JACKETS</button>
-        <button className="button-categories">KNITWEAR</button>
-        <button className="button-categories">JUMPSUITS</button>
-        <button className="button-categories">BOTTOMS</button>
-        <button className="button-categories">INTIMATES</button>
-        <button className="button-categories">SHORTS</button>
-        <button className="button-categories">JEANS</button>
-        <button className="button-categories">SKIRTS</button>
+        <CategoriesClothesFilter
+          filterClothes={filterClothes}
+          onFilterClothes={onFilterClothes}
+        />
+
         <button className="button-categories">SALE</button>
-        <button className="button-categories">SHOP ALL</button>
 
         <div className="filters-categories">FILTERS</div>
         <TreeViewCategories />
@@ -29,24 +22,33 @@ const Categories = () => {
     </div>
   );
 };
-const CategoriesClothesFilter = ({ filter, onFilterChange }) => {
-  const buttonsFil = [
-    { name: "all", label: "All" },
-    { name: "active", label: "Active" },
-    { name: "done", label: "Done" },
+const CategoriesClothesFilter = ({ onFilterClothes, filterClothes }) => {
+  const buttonsFilter = [
+    { name: "shop-all", label: "SHOP ALL" },
+    { name: "shorts", label: "SHORTS" },
+    { name: "jeans", label: "JEANS" },
+    { name: "jacket", label: "JACKETS" },
+    { name: "top", label: "TOPS" },
+    { name: "tee-and-trank", label: "TEES AND TANKS" },
+    { name: "dress", label: "SHIRT" },
+    { name: "dress", label: "DRESSES" },
+    { name: "knitwear", label: "KNITWEAR" },
+    { name: "jumpsuit", label: "JUMPSUITS" },
+    { name: "bottom", label: "BOTTOMS" },
+    { name: "hoodie", label: "HOODIES" },
+    { name: "skirt", label: "SKIRTS" },
   ];
 
-  // const = this.props;
-  const buttons = buttonsFil.map(({ name, label }) => {
-    const isActive = filter === name;
+  const buttons = buttonsFilter.map(({ name, label }) => {
+    const isActive = filterClothes === name;
 
-    const clazz = isActive ? "btn-info" : "btn-outline-secondary";
+    const clazz = isActive ? "button-active" : "button-nonactive";
     return (
       <button
         type="button"
-        className={`btn ${clazz}`}
+        className={`button-categories ${clazz}`}
         key={name}
-        onClick={() => onFilterChange(name)}
+        onClick={() => onFilterClothes(name)}
       >
         {label}
       </button>
@@ -54,10 +56,15 @@ const CategoriesClothesFilter = ({ filter, onFilterChange }) => {
   });
   return <div className="categories-container">{buttons}</div>;
 };
-const mapStateToProps = ({ clothes, loading, error }) => {
-  return { clothes, loading, error };
+const mapStateToProps = ({ filterClothes }) => {
+  return {
+    filterClothes: filterClothes,
+  };
 };
+
 const mapDispatchToProps = {
-  onFilterClothes: onFilterClothes,
+  onFilterClothes: (name) => onFilterClothes(name),
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Categories);
+export default withModnikkyService()(
+  connect(mapStateToProps, mapDispatchToProps)(Categories)
+);
