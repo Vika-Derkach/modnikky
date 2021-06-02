@@ -9,6 +9,7 @@ const initialState = {
   orderTotal: 0,
   orderTotalPrice: 0,
   searchClothesValue: "",
+  filterClothes: "jeans",
 };
 const updateBagItems = (bagItems, item, idx) => {
   /// удаляє елемент з масива
@@ -75,6 +76,18 @@ const updateOrder = (state, bagProductId, quantity) => {
   };
 };
 
+//filter
+const filter = (items, filter) => {
+  switch (filter) {
+    case "shorts":
+      return items.filter((item) => item.kind === "shorts");
+    case "jeans":
+      return items.filter((item) => item.kind === "jeans");
+
+    default:
+      return items;
+  }
+};
 const reducer = (state = initialState, action) => {
   console.log(action.type);
 
@@ -150,14 +163,23 @@ const reducer = (state = initialState, action) => {
           );
         });
       };
-      const visibleClothes = search(clothesFromDb, value);
+      const visibleClothes = filter(
+        search(clothesFromDb, value),
+        state.filterClothes
+      );
 
       return {
         ...state,
         clothes: visibleClothes,
         searchClothesValue: value,
       };
-
+    case "ON_FILTER_CLOTHES":
+      const { filterClothes } = state;
+      const filteredClothes = filter(clothesFromDb, filterClothes);
+      return {
+        ...state,
+        clothes: filteredClothes,
+      };
     default:
       return state;
   }

@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { onFilterClothes } from "../../actions";
 import TreeViewCategories from "../tree-view-categories";
 import "./categories.css";
 const Categories = () => {
@@ -20,10 +22,42 @@ const Categories = () => {
         <button className="button-categories">SKIRTS</button>
         <button className="button-categories">SALE</button>
         <button className="button-categories">SHOP ALL</button>
+
         <div className="filters-categories">FILTERS</div>
         <TreeViewCategories />
       </div>
     </div>
   );
 };
-export default Categories;
+const CategoriesClothesFilter = ({ filter, onFilterChange }) => {
+  const buttonsFil = [
+    { name: "all", label: "All" },
+    { name: "active", label: "Active" },
+    { name: "done", label: "Done" },
+  ];
+
+  // const = this.props;
+  const buttons = buttonsFil.map(({ name, label }) => {
+    const isActive = filter === name;
+
+    const clazz = isActive ? "btn-info" : "btn-outline-secondary";
+    return (
+      <button
+        type="button"
+        className={`btn ${clazz}`}
+        key={name}
+        onClick={() => onFilterChange(name)}
+      >
+        {label}
+      </button>
+    );
+  });
+  return <div className="categories-container">{buttons}</div>;
+};
+const mapStateToProps = ({ clothes, loading, error }) => {
+  return { clothes, loading, error };
+};
+const mapDispatchToProps = {
+  onFilterClothes: onFilterClothes,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);

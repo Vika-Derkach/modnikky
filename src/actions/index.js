@@ -46,7 +46,11 @@ const searchClothes = (value) => {
     value,
   };
 };
-
+const onFilterClothes = () => {
+  return {
+    type: "ON_FILTER_CLOTHES",
+  };
+};
 export {
   clothesLoaded,
   clothesRequested,
@@ -56,4 +60,5 @@ export {
   productRemovedFromBag,
   productAllRemovedFromBag,
   searchClothes,
+  onFilterClothes,
 };
