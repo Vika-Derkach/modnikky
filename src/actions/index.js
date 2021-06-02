@@ -64,6 +64,12 @@ const onFilterPrice = (priceName) => {
     priceName,
   };
 };
+const onFilterFabric = (fabricName) => {
+  return {
+    type: "ON_FILTER_FABRIC",
+    fabricName,
+  };
+};
 export {
   clothesLoaded,
   clothesRequested,
@@ -76,4 +82,5 @@ export {
   onFilterClothes,
   onFilterSize,
   onFilterPrice,
+  onFilterFabric,
 };

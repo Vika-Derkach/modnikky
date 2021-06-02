@@ -15,6 +15,7 @@
 }
 .categories-container .button-categories:hover {
   color: rgb(142, 120, 127);
+  transition: 0.4s ease-in-out;
 }
 .button-active {
   color: #8c8c8c;

@@ -10,6 +10,14 @@
   margin-bottom: 2.5rem;
   margin-left: 5%;
 }
+.insta-shop__title a {
+  transition: 0.5s ease-in-out;
+  text-decoration: underline;
+  color: #000f08;
+}
+.insta-shop__title a:hover {
+  color: #8c8c8c;
+}
 .insta-shop-container {
   display: flex;
   flex-direction: row;

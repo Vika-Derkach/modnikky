@@ -12,6 +12,7 @@ const initialState = {
   filterClothes: "",
   filterSize: "",
   filterPrice: "",
+  filterFabric: "",
 };
 const updateBagItems = (bagItems, item, idx) => {
   /// удаляє елемент з масива
@@ -143,6 +144,29 @@ const filterPrizes = (items, filter) => {
       return items;
   }
 };
+const filterFabrics = (items, filter) => {
+  switch (filter) {
+    case "COTTON":
+      return items.filter((item) => item.fabric === "COTTON");
+    case "DENIM":
+      return items.filter((item) => item.fabric === "DENIM");
+    case "LACE":
+      return items.filter((item) => item.fabric === "LACE");
+    case "LEATHER":
+      return items.filter((item) => item.fabric === "LEATHER");
+    case "LINEN":
+      return items.filter((item) => item.fabric === "LINEN");
+    case "SILK":
+      return items.filter((item) => item.fabric === "SILK");
+    case "SYNTHETIC":
+      return items.filter((item) => item.fabric === "SYNTHETIC");
+    case "WOOL":
+      return items.filter((item) => item.fabric === "WOOL");
+
+    default:
+      return items;
+  }
+};
 const reducer = (state = initialState, action) => {
   console.log(action.type);
 
@@ -241,7 +265,6 @@ const reducer = (state = initialState, action) => {
       };
     case "ON_FILTER_SIZE":
       const { sizeName = "" } = action;
-      const { filterSize } = state;
 
       const filteredSized = filter(
         filterSizes(state.clothesFromDb, sizeName),
@@ -257,7 +280,6 @@ const reducer = (state = initialState, action) => {
 
     case "ON_FILTER_PRICE":
       const { priceName = "" } = action;
-      const { filterPrice } = state;
 
       const filteredPriced = filter(
         filterSizes(
@@ -270,6 +292,21 @@ const reducer = (state = initialState, action) => {
         ...state,
         clothes: filteredPriced,
         filterPrice: priceName,
+      };
+    case "ON_FILTER_FABRIC":
+      const { fabricName = "" } = action;
+
+      const filteredFabric = filter(
+        filterSizes(
+          filterFabrics(state.clothesFromDb, fabricName),
+          state.filterSize
+        ),
+        state.filterFabric
+      );
+      return {
+        ...state,
+        clothes: filteredFabric,
+        filterFabric: fabricName,
       };
   }
 };
