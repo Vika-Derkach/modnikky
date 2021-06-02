@@ -11,6 +11,7 @@ const initialState = {
   searchClothesValue: "",
   filterClothes: "",
   filterSize: "",
+  filterPrice: "",
 };
 const updateBagItems = (bagItems, item, idx) => {
   /// удаляє елемент з масива
@@ -111,7 +112,7 @@ const filter = (items, filter) => {
       return items;
   }
 };
-const filterSized = (items, filter) => {
+const filterSizes = (items, filter) => {
   switch (filter) {
     // case "shop-all":
     //   return items;
@@ -123,6 +124,20 @@ const filterSized = (items, filter) => {
       return items.filter((item) => item.size === "L");
     case "XL":
       return items.filter((item) => item.size === "XL");
+
+    default:
+      return items;
+  }
+};
+
+const filterPrizes = (items, filter) => {
+  switch (filter) {
+    case "<30$":
+      return items.filter((item) => item.price <= 30);
+    case "30-300$":
+      return items.filter((item) => item.price > 30 && item.price < 300);
+    case "300+$":
+      return items.filter((item) => item.price >= 300);
 
     default:
       return items;
@@ -229,7 +244,7 @@ const reducer = (state = initialState, action) => {
       const { filterSize } = state;
 
       const filteredSized = filter(
-        filterSized(state.clothesFromDb, sizeName),
+        filterSizes(state.clothesFromDb, sizeName),
         state.filterClothes
       );
       return {
@@ -239,6 +254,23 @@ const reducer = (state = initialState, action) => {
       };
     default:
       return state;
+
+    case "ON_FILTER_PRICE":
+      const { priceName = "" } = action;
+      const { filterPrice } = state;
+
+      const filteredPriced = filter(
+        filterSizes(
+          filterPrizes(state.clothesFromDb, priceName),
+          state.filterSize
+        ),
+        state.filterPrice
+      );
+      return {
+        ...state,
+        clothes: filteredPriced,
+        filterPrice: priceName,
+      };
   }
 };
 export default reducer;

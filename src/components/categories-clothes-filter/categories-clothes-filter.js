@@ -9,7 +9,7 @@ const CategoriesClothesFilter = ({ onFilterClothes, filterClothes }) => {
     { name: "jacket", label: "JACKETS" },
     { name: "top", label: "TOPS" },
     { name: "tee-and-trank", label: "TEES AND TANKS" },
-    { name: "dress", label: "SHIRT" },
+    { name: "shirt", label: "SHIRT" },
     { name: "dress", label: "DRESSES" },
     { name: "knitwear", label: "KNITWEAR" },
     { name: "jumpsuit", label: "JUMPSUITS" },

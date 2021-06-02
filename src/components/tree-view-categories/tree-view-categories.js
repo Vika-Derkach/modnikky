@@ -13,7 +13,11 @@ const useStyles = makeStyles({
     maxWidth: 400,
   },
 });
-export default function TreeViewCategories({ onFilterSize, filterSize }) {
+export default function TreeViewCategories({
+  onFilterSize,
+  filterSize,
+  onFilterPrice,
+}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState([]);
   const [selected, setSelected] = React.useState([]);
@@ -46,6 +50,24 @@ export default function TreeViewCategories({ onFilterSize, filterSize }) {
       />
     );
   });
+  const buttonsFilterPrice = [
+    { name: "<30$", nodeId: "7", labelPrice: "<30$" },
+    { name: "30-300$", nodeId: "8", labelPrice: "30-300$" },
+    { name: "300+$", nodeId: "9", labelPrice: "30-300$" },
+  ];
+
+  const buttonsPrice = buttonsFilterPrice.map(
+    ({ name, labelPrice, nodeId }) => {
+      return (
+        <TreeItem
+          key={name}
+          nodeId={nodeId}
+          label={labelPrice}
+          onClick={() => onFilterPrice(name)}
+        />
+      );
+    }
+  );
   return (
     <TreeView
       className={classes.root}
@@ -60,16 +82,16 @@ export default function TreeViewCategories({ onFilterSize, filterSize }) {
         {buttonsSize}
       </TreeItem>
       <TreeItem nodeId="6" label="PRICE">
-        <TreeItem nodeId="7" label="10-30$" />
-        <TreeItem nodeId="8" label="30-100$" />
-        <TreeItem nodeId="9" label="100-300$" />
+        {buttonsPrice}
+        {/* <TreeItem nodeId="7" label="<30$" />
+        <TreeItem nodeId="8" label="30-300$" />
+        <TreeItem nodeId="9" label="300+$" /> */}
       </TreeItem>
 
       <TreeItem nodeId="10" label="COLOR">
         <TreeItem nodeId="11" label="DARK" />
         <TreeItem nodeId="12" label="LIGHT" />
       </TreeItem>
-
       <TreeItem nodeId="13" label="FABRIC">
         <TreeItem nodeId="14" label="Denim" />
         <TreeItem nodeId="15" label="Leather" />

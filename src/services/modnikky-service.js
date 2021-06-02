@@ -3,7 +3,7 @@ export default class ModnikkyService {
     {
       id: 1,
       title: "Pinterest Europe Blue Crimping Denim Shorts",
-      price: 50,
+      price: 20,
       frontPicture:
         "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F50%2Fc7%2F50c77565f101f976d866104bf0c8f2adaebc9417.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bladies_jeans_loose%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
       additionalPicture:
@@ -34,7 +34,7 @@ export default class ModnikkyService {
     {
       id: 3,
       title: "Women’s Black Leather Biker Jacket",
-      price: 250,
+      price: 301,
       frontPicture:
         "https://i.pinimg.com/originals/ce/4e/b9/ce4eb9a17ef3b76364c3a1d8fd81ce15.jpg",
       additionalPicture:

@@ -58,6 +58,12 @@ const onFilterSize = (sizeName) => {
     sizeName,
   };
 };
+const onFilterPrice = (priceName) => {
+  return {
+    type: "ON_FILTER_PRICE",
+    priceName,
+  };
+};
 export {
   clothesLoaded,
   clothesRequested,
@@ -69,4 +75,5 @@ export {
   searchClothes,
   onFilterClothes,
   onFilterSize,
+  onFilterPrice,
 };

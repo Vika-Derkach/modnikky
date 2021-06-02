@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { onFilterClothes, onFilterSize } from "../../actions";
+import { onFilterClothes, onFilterPrice, onFilterSize } from "../../actions";
 import CategoriesClothesFilter from "../categories-clothes-filter";
 import TreeViewCategories from "../tree-view-categories";
 import "./categories.css";
@@ -9,6 +9,7 @@ const Categories = ({
   onFilterClothes,
   onFilterSize,
   filterSize,
+  onFilterPrice,
 }) => {
   return (
     <div className="categories">
@@ -25,6 +26,7 @@ const Categories = ({
         <TreeViewCategories
           onFilterSize={onFilterSize}
           filterSize={filterSize}
+          onFilterPrice={onFilterPrice}
         />
       </div>
     </div>
@@ -41,5 +43,6 @@ const mapStateToProps = ({ filterClothes, filterSize }) => {
 const mapDispatchToProps = {
   onFilterClothes: (name) => onFilterClothes(name),
   onFilterSize: (name) => onFilterSize(name),
+  onFilterPrice: (name) => onFilterPrice(name),
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);
