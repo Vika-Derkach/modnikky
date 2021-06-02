@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { onFilterClothes } from "../../actions";
+import { onFilterClothes, onFilterSize } from "../../actions";
 import CategoriesClothesFilter from "../categories-clothes-filter";
 import TreeViewCategories from "../tree-view-categories";
 import "./categories.css";
-const Categories = ({ filterClothes, onFilterClothes }) => {
+const Categories = ({ filterClothes, onFilterClothes, onFilterSize }) => {
   return (
     <div className="categories">
       <h2>Categories</h2>
@@ -14,10 +14,10 @@ const Categories = ({ filterClothes, onFilterClothes }) => {
           onFilterClothes={onFilterClothes}
         />
 
-        <button className="button-categories">SALE</button>
+        {/* <button className="button-categories">SALE</button> */}
 
         <div className="filters-categories">FILTERS</div>
-        <TreeViewCategories />
+        <TreeViewCategories onFilterSize={onFilterSize} />
       </div>
     </div>
   );
@@ -31,5 +31,6 @@ const mapStateToProps = ({ filterClothes }) => {
 
 const mapDispatchToProps = {
   onFilterClothes: (name) => onFilterClothes(name),
+  onFilterSize: (name) => onFilterSize(name),
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);

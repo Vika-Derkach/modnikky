@@ -14,4 +14,5 @@
   border: none;
   outline: none;
   box-shadow: 15px 15px 15px rgba(140, 140, 140, 0.4);
+  transition: 0.5s;
 }

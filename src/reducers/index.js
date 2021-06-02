@@ -10,6 +10,7 @@ const initialState = {
   orderTotalPrice: 0,
   searchClothesValue: "",
   filterClothes: "",
+  filterSize: "S",
 };
 const updateBagItems = (bagItems, item, idx) => {
   /// удаляє елемент з масива
@@ -110,6 +111,23 @@ const filter = (items, filter) => {
       return items;
   }
 };
+const filterSized = (items, filter) => {
+  switch (filter) {
+    // case "shop-all":
+    //   return items;
+    case "S":
+      return items.filter((item) => item.size === "S");
+    case "M":
+      return items.filter((item) => item.size === "M");
+    case "L":
+      return items.filter((item) => item.size === "L");
+    case "XL":
+      return items.filter((item) => item.size === "XL");
+
+    default:
+      return items;
+  }
+};
 const reducer = (state = initialState, action) => {
   console.log(action.type);
 
@@ -150,6 +168,7 @@ const reducer = (state = initialState, action) => {
         price: cloth.price,
         color: cloth.color,
         kind: cloth.kind,
+        size: cloth.size,
       };
       return {
         ...state,
@@ -187,6 +206,7 @@ const reducer = (state = initialState, action) => {
       };
       const visibleClothes = filter(
         search(clothesFromDb, value),
+
         state.filterClothes
       );
 
@@ -204,6 +224,20 @@ const reducer = (state = initialState, action) => {
         ...state,
         clothes: filteredClothes,
         filterClothes: clothName,
+      };
+    case "ON_FILTER_SIZE":
+      const { sizeName = "" } = action;
+      const { filterSize } = state;
+
+      const filteredSized =
+        //  filter(
+        filterSized(state.clothesFromDb, sizeName);
+      //   state.filterClothes
+      // );
+      return {
+        ...state,
+        clothes: filteredSized,
+        filterSize: sizeName,
       };
     default:
       return state;

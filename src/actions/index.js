@@ -52,6 +52,12 @@ const onFilterClothes = (clothName) => {
     clothName,
   };
 };
+const onFilterSize = (sizeName) => {
+  return {
+    type: "ON_FILTER_SIZE",
+    sizeName,
+  };
+};
 export {
   clothesLoaded,
   clothesRequested,
@@ -62,4 +68,5 @@ export {
   productAllRemovedFromBag,
   searchClothes,
   onFilterClothes,
+  onFilterSize,
 };

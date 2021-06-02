@@ -14,6 +14,7 @@ export default class ModnikkyService {
       color: "BLUE",
 
       kind: "shorts",
+      size: "S",
     },
     {
       id: 2,
@@ -28,6 +29,7 @@ export default class ModnikkyService {
         "High-rise waist; \n Concealed fly; \n Button fastening; \n Functional pockets; \n Slim tapered leg; \n Sits on the ankle",
       color: "BLUE",
       kind: "jeans",
+      size: "L",
     },
     {
       id: 3,
@@ -42,6 +44,7 @@ export default class ModnikkyService {
         "If you are looking for a traditional style leather biker jacket with a difference then this is the perfect choice for you. Manufactured from the highest quality lamb nappa which is perfect to create this popular and beautifully feminine cut.",
       color: "BLACK",
       kind: "jacket",
+      size: "XL",
     },
   ];
   getClothes() {

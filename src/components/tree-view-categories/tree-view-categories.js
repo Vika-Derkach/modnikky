@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     maxWidth: 400,
   },
 });
-export default function TreeViewCategories() {
+export default function TreeViewCategories({ onFilterSize }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState([]);
   const [selected, setSelected] = React.useState([]);
@@ -25,6 +25,22 @@ export default function TreeViewCategories() {
   const handleSelect = (event, nodeIds) => {
     setSelected(nodeIds);
   };
+  const buttonsFilterSize = [
+    { name: "S", nodeId: "2", labelSize: "S" },
+    { name: "M", nodeId: "3", labelSize: "M" },
+    { name: "L", nodeId: "4", labelSize: "L" },
+    { name: "XL", nodeId: "5", labelSize: "XL" },
+  ];
+  const buttonsSize = buttonsFilterSize.map(({ name, labelSize, nodeId }) => {
+    return (
+      <TreeItem
+        key={name}
+        nodeId={nodeId}
+        label={labelSize}
+        onClick={() => onFilterSize(name)}
+      />
+    );
+  });
   return (
     <TreeView
       className={classes.root}
@@ -36,10 +52,7 @@ export default function TreeViewCategories() {
       onNodeSelect={handleSelect}
     >
       <TreeItem nodeId="1" label="SIZE">
-        <TreeItem nodeId="2" label="S" />
-        <TreeItem nodeId="3" label="M" />
-        <TreeItem nodeId="4" label="L" />
-        <TreeItem nodeId="5" label="XL" />
+        {buttonsSize}
       </TreeItem>
       <TreeItem nodeId="6" label="PRICE">
         <TreeItem nodeId="7" label="10-30$" />

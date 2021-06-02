@@ -4,12 +4,10 @@ import { productAddedToBag } from "../../actions";
 import ContainedButton from "../contained-button";
 import { withModnikkyService } from "../hoc";
 import ProductDescr from "../product-descr";
-import SizeSelector from "../size-selector";
 import "./product-section.css";
 
 const ProductSection = ({ items, onAddedToBag, price, onItemSelected }) => {
   const button_text = "ADD TO BAG";
-  // const {id, title, frontPicture} = items;
 
   return (
     <div>
@@ -23,6 +21,7 @@ const ProductSection = ({ items, onAddedToBag, price, onItemSelected }) => {
           product_descr,
           price,
           color,
+          size,
         } = item;
         return (
           <div key={id} className="product-section">
@@ -43,16 +42,17 @@ const ProductSection = ({ items, onAddedToBag, price, onItemSelected }) => {
               <div className="product-section_text__order">PRE-ORDER</div>
               <div className="product-section_text__color">COLOR: {color}</div>
               <div className="product-section_text__size">
-                <div className="product-section_text__size__title">SIZE</div>
-                <div className="size-button">
-                  <SizeSelector />
+                <div className="product-section_text__size__title">
+                  SIZE: {size}
                 </div>
+                {/* <div className="size-button">
+                  <SizeSelector />
+                </div> */}
               </div>
               <div className="product-section_text__button">
                 {" "}
                 <ContainedButton
                   onAction={() => onAddedToBag(id)}
-                  // onClick={onAddedtoCart(id)}
                   button_text={button_text}
                 />
               </div>
@@ -75,7 +75,6 @@ const mapDispatchToProps = {
   onAddedToBag: (id) => productAddedToBag(id),
 };
 
-// const mapDispatchToProps
 export default withModnikkyService()(
   connect(mapStateToProps, mapDispatchToProps)(ProductSection)
 );
