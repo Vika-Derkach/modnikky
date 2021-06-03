@@ -28,7 +28,7 @@ const Bag = ({
           <BagItem
             onDelete={() => onDelete(product.id)}
             onDecrease={() => onDecrease(product.id)}
-            onAddedToBag={() => onIncrease(product.id)}
+            onIncrease={() => onIncrease(product.id)}
             product={product}
             key={product.id}
           />

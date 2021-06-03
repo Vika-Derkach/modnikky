@@ -71,13 +71,13 @@ export default function TreeViewCategories({
   );
   ///////
   const buttonsFilterFabric = [
-    { name: "COTTON", nodeId: "11", labelPrice: "Cotton" },
+    { name: "SYNTHETIC", nodeId: "11", labelPrice: "Synthetics" },
     { name: "DENIM", nodeId: "12", labelFabric: "Denim" },
     { name: "LACE", nodeId: "13", labelFabric: "Lace" },
     { name: "LEATHER", nodeId: "14", labelFabric: "Leather" },
     { name: "LINEN", nodeId: "15", labelFabric: "Linen" },
     { name: "SILK", nodeId: "16", labelFabric: "Silk" },
-    { name: "SYNTHETIC", nodeId: "17", labelFabric: "Synthetics" },
+    { name: "COTTON", nodeId: "17", labelFabric: "Cotton" },
     { name: "WOOL", nodeId: "18", labelFabric: "Wool" },
   ];
 
