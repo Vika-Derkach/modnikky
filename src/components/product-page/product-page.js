@@ -6,30 +6,24 @@ import NewArrivals from "../new-arrivals";
 import ProductSection from "../product-section";
 import "./product-page.css";
 
-const ProductPage = ({ clothes }) => {
-  // const { kind, frontPicture } = clothes;
-
-  // useEffect(() => {
-
-  //   modnikkyService
-  //     .getClothes()
-  //     .then((data) => clothesLoaded(data));
-
-  // }, []);
-  ///mathrandom service image
+const ProductPage = ({ clothes, lookPicture, lookPictureSecond }) => {
   const sweater1 =
-    "https://www.na-kd.com/globalassets/nakd_destroyed_detail_high_waist_staight_jeans_1018-006823-0116_01c-1.jpg?ref=09FAA58D86";
+    "https://cdn-hoy.gant.com/public/serve/415482/w_300,q_80/20210211101222-202101-432681-662-model-fv-1-432681-662-model-fv.jpg";
+
   const sweater2 =
-    "https://minnim.ua/image/catalog/wjml_bosonozhki/dzhinsy-mom-jeans-light-1.jpg";
-  const sweater3 =
-    "https://i.pinimg.com/474x/28/7e/bb/287ebbb9a33265ab8915b0ffd50f7fd7.jpg";
-  const sweater4 =
     "https://media.boohoo.com/i/boohoo/dzz11660_mid%2520blue_xl?pdp.template";
+  const sweater3 =
+    "https://www.baumundpferdgarten.com/pub/media/catalog/product/cache/095503e0f0c3da5a2ee8f403ce3f1fc3/5/1/5142849_21481_8148_Packback_1.jpg";
+  const sweater4 =
+    "https://cdn.shopify.com/s/files/1/0285/9001/4596/products/1003075_CASCADE_MAXI_DRESS_COPPER_PHOEBE_3_1150x.jpg?v=1615933275";
 
   return (
     <div className="product-page">
       <ProductSection />
-      <CompleteLook />
+      <CompleteLook
+        lookPicture={lookPicture}
+        lookPictureSecond={lookPictureSecond}
+      />
       <NewArrivals
         arr_title="YOU MAY ALSO LIKE"
         arr_pic1={sweater1}
@@ -40,7 +34,7 @@ const ProductPage = ({ clothes }) => {
     </div>
   );
 };
-const mapStateToProps = ({ clothes }) => {
-  return { clothes };
+const mapStateToProps = ({ clothes, lookPicture, lookPictureSecond }) => {
+  return { clothes, lookPicture, lookPictureSecond };
 };
 export default withModnikkyService()(connect(mapStateToProps)(ProductPage));

@@ -13,6 +13,8 @@ const initialState = {
   filterSize: "",
   filterPrice: "",
   filterFabric: "",
+  lookPicture: "",
+  lookPictureSecond: "",
 };
 const updateBagItems = (bagItems, item, idx) => {
   /// удаляє елемент з масива
@@ -210,9 +212,21 @@ const reducer = (state = initialState, action) => {
         kind: cloth.kind,
         size: cloth.size,
       };
+      const newLookPicture = state.clothesFromDb.find(
+        (cloth) =>
+          // cloth.frontPicture !== newItem.frontPicture &&
+          cloth.kind !== newItem.kind
+      );
+      const newLookPictureSecond = state.clothesFromDb.find(
+        (cloth) =>
+          cloth.kind !== newItem.kind && cloth.kind !== newLookPicture.kind
+      );
+
       return {
         ...state,
         productItems: [newItem],
+        lookPicture: newLookPicture.frontPicture,
+        lookPictureSecond: newLookPictureSecond.frontPicture,
       };
     case "PRODUCT_ADDED_TO_BAG":
       return updateOrder(state, action.payload, 1);
