@@ -29,6 +29,7 @@
   border: none;
   width: 30%;
   outline: none;
+  transition: 0.2s;
 }
 .header_right__search:focus {
   border-bottom: #d8d8d8 1px solid;
@@ -41,6 +42,7 @@
   font-weight: 500;
   font-size: 1rem;
   line-height: 0.8rem;
+  transition: 0.2s;
 }
 .header_link:hover {
   color: #8c8c8c;

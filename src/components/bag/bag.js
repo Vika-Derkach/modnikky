@@ -1,11 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
-import { productAllRemovedFromBag, productRemovedFromBag } from "../../actions";
+import {
+  productAddedToBag,
+  productAllRemovedFromBag,
+  productRemovedFromBag,
+} from "../../actions";
 import BagItem from "../bag-item";
 import ContainedButton from "../contained-button";
 import { withModnikkyService } from "../hoc";
 import "./bag.css";
-const Bag = ({ products, totalPrice, onDelete, totalItems, onDecrease }) => {
+const Bag = ({
+  products,
+  totalPrice,
+  onDelete,
+  totalItems,
+  onDecrease,
+  onIncrease,
+}) => {
   const button_text_checkout = "PROCEED TO CHECKOUT";
   return (
     <div className="bag">
@@ -17,6 +28,7 @@ const Bag = ({ products, totalPrice, onDelete, totalItems, onDecrease }) => {
           <BagItem
             onDelete={() => onDelete(product.id)}
             onDecrease={() => onDecrease(product.id)}
+            onAddedToBag={() => onIncrease(product.id)}
             product={product}
             key={product.id}
           />
@@ -40,6 +52,7 @@ const mapStateToProps = ({ bagItems, orderTotal, orderTotalPrice }) => {
 const mapDispatchToProps = {
   onDecrease: productRemovedFromBag,
   onDelete: productAllRemovedFromBag,
+  onIncrease: productAddedToBag,
 };
 export default withModnikkyService()(
   connect(mapStateToProps, mapDispatchToProps)(Bag)

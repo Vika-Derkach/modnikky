@@ -6,7 +6,7 @@ import { bindActionCreators } from "redux";
 import { searchClothes } from "../../actions";
 import styles from "./header.module.css";
 
-const Header = ({ totalItems, searchClothes, searchValue }) => {
+const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
   return (
     <div>
       <div className={styles.header}>
@@ -23,17 +23,8 @@ const Header = ({ totalItems, searchClothes, searchValue }) => {
               NEW ARRIVALS
             </ScrollLink>
           </Link>
-          <Link to="/" className={styles.header_link}>
-            <ScrollLink
-              activeClass="active"
-              to="insta-shop"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              SHOP
-            </ScrollLink>
+          <Link to="/insta-shop" className={styles.header_link}>
+            SHOP
           </Link>
 
           <Link to="/catalogue" className={styles.header_link}>

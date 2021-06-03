@@ -38,17 +38,23 @@
   border-radius: 50%;
   outline: none;
   align-self: flex-end;
-  color: #8c8c8c;
+  color: #000f08;
 }
 .bag-item .button-update:hover {
   border: none;
-  background-color: red;
-  color: white;
-  box-shadow: 5px 5px 5px rgba(66, 11, 11, 0.4);
+  /* background-color: rgb(250, 9, 9); */
+  color: #aaaaaa;
+  /* box-shadow: 5px 5px 5px rgba(66, 11, 11, 0.4); */
 }
-.bag-item .button-reduce {
-  margin-right: 7px;
+.bag-item .button-quantity {
+  margin-right: 5px;
+  margin-left: 5px;
 }
-.bag-item .button-reduce:hover {
-  background-color: yellow;
+.bag-item .button-quantity:hover {
+  border: none;
+
+  color: #aaaaaa;
+}
+.quantity-number {
+  font-size: 1.1rem;
 }

@@ -6,14 +6,7 @@ import GoodsItem from "../goods-item";
 import { withModnikkyService } from "../hoc";
 import Spinner from "../spinner";
 import "./goods.css";
-const Goods = ({
-  clothes,
-  loading,
-  error,
-
-  onItemSelected,
-  fetchClothes,
-}) => {
+const Goods = ({ clothes, loading, error, onItemSelected, fetchClothes }) => {
   useEffect(() => {
     fetchClothes();
   }, []);

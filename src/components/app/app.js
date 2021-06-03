@@ -9,6 +9,7 @@ import Header from "../header";
 import { withModnikkyService } from "../hoc";
 import HomePage from "../home-page";
 import InfoPage from "../info-page";
+import InstaShop from "../insta-shop";
 import NewArrivals from "../new-arrivals";
 import ProductPage from "../product-page";
 import ScrollTopArrow from "../scroll-top-arrow";
@@ -56,6 +57,7 @@ const App = ({ modnikkyService }) => {
           <Route path="/sign-up" component={SingUpModal} />
           <Route path="/customer-service" component={CustomerServicePage} />
           <Route path="/new-arrivals" component={NewArrivals} />
+          <Route path="/insta-shop" component={InstaShop} />
           <Route
             path="/black-Friday"
             render={() => (
@@ -108,6 +110,7 @@ const App = ({ modnikkyService }) => {
               </div>
             )}
           />
+
           <Route
             render={() => (
               <div className="mistake-page">

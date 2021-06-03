@@ -42,6 +42,7 @@ const updateBagItem = (bagProduct, bagProductItem, quantity) => {
       price: bagProduct.price,
       color: bagProduct.color,
       count: 1,
+      size: bagProduct.size,
     };
   }
 };
