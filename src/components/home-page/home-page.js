@@ -35,7 +35,7 @@ const HomePage = () => {
   const title_4 = "PRAY FOR ROCK";
   const descr4 =
     " Beloved and forever relevant, there’s a convenience factor in a well-built pair of all-in-ones. ";
-  const button4 = "SHOP COLLECTION";
+  const button4 = "CUSTOMER SERVICE";
   return (
     <div>
       <ScreenPic
@@ -43,12 +43,14 @@ const HomePage = () => {
         title={title_1}
         descr={descr1}
         button={button1}
+        buttonLink="/catalogue"
       />
       <ScreenPic
         screen_pic={screen_pic2}
         title={title_2}
         descr={descr2}
         button={button2}
+        buttonLink="/insta-shop"
       />
       <CatalogPic
         pic_catal1={pic_dress}
@@ -60,6 +62,7 @@ const HomePage = () => {
         title={title_3}
         descr={descr3}
         button={button3}
+        buttonLink="/catalogue"
       />
 
       <NewArrivals
@@ -74,6 +77,7 @@ const HomePage = () => {
         title={title_4}
         descr={descr4}
         button={button4}
+        buttonLink="/customer-service"
       />
       <InstaShop />
     </div>

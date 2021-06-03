@@ -2,8 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ContainedButton from "../contained-button";
 import "./sign-up-modal.css";
+
 const SingUpModal = () => {
   const button_text = "SIGN UP";
+  let classSignIn;
+  let text;
+  const sendedMassage = () => {
+    classSignIn = " sign-visible";
+    text = "You are signed up";
+    return {
+      classSignIn,
+      text,
+    };
+  };
 
   return (
     <div className="overlay">
@@ -17,10 +28,10 @@ const SingUpModal = () => {
 
         <div className="popup-form">
           <form
-            method="post"
+            // method="post"
             action="#"
-            enctype="multipart/form-data"
-            autocomplete="off"
+            // enctype="multipart/form-data"
+            // autocomplete="off"
             className="main-form"
           >
             <input
@@ -70,10 +81,13 @@ const SingUpModal = () => {
               </a>{" "}
               and <a href="https://policies.google.com/">Privacy Policy</a>
             </div>
-            <div className="popup-form__button">
-              <ContainedButton button_text={button_text} />
-            </div>
-
+            <Link to="/" className="popup-form__button">
+              <ContainedButton
+                onAction={sendedMassage()}
+                button_text={button_text}
+              />
+            </Link>
+            <div className={`sign-text ${classSignIn}`}> {text} </div>
             <a
               href="https://support.google.com/accounts/answer/40560?hl=en"
               className="popup-form__account"

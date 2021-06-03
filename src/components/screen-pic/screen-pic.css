@@ -26,7 +26,7 @@
   outline: none;
 }
 .main-text .main-text__button:hover {
-  border: 1px dashed white;
+  border: 1px solid white;
   background-color: rgba(56, 79, 88, 0.5);
   color: white;
   outline: none;

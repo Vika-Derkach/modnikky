@@ -17,15 +17,14 @@ const Footer = () => {
         <div className="footer-text__desc">
           Sign up for exclusive early sale access and tailored new arrivals.
         </div>
-        <div className="footer-text__form">
+        <form className="footer-text__form">
           <input
             type="email"
-            pattern=".+@globex.com"
             className="footer-text__form_input"
             placeholder="Your email address"
           ></input>
           <button className="footer-text__form_button">JOIN</button>
-        </div>
+        </form>
       </div>
       <div className="footer-col">
         <div className="footer-service">
