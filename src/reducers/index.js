@@ -171,7 +171,7 @@ const reducer = (state = initialState, action) => {
   console.log(action.type);
 
   switch (action.type) {
-    case "BOOKS_REQUESTED":
+    case "FETCH_CLOTHES_REQUEST":
       return {
         ...state,
         clothes: [],
@@ -179,7 +179,7 @@ const reducer = (state = initialState, action) => {
         loading: true,
         error: null,
       };
-    case "CLOTHES_LOADED":
+    case "FETCH_CLOTHES_SUCCESS":
       return {
         ...state,
         clothes: action.payload,
@@ -187,7 +187,7 @@ const reducer = (state = initialState, action) => {
         loading: false,
         error: null,
       };
-    case "CLOTHES_ERROR":
+    case "FETCH_CLOTHES_FAILURE":
       return {
         ...state,
         clothes: [],

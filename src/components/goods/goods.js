@@ -1,12 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import {
-  clothesError,
-  clothesLoaded,
-  clothesRequested,
-  onItemSelected,
-  searchClothes,
-} from "../../actions";
+import { fetchClothes, onItemSelected, searchClothes } from "../../actions";
 import ErrorIndicator from "../error-indicator";
 import GoodsItem from "../goods-item";
 import { withModnikkyService } from "../hoc";
@@ -16,18 +10,12 @@ const Goods = ({
   clothes,
   loading,
   error,
-  modnikkyService,
-  clothesLoaded,
-  clothesRequested,
-  clothesError,
+
   onItemSelected,
+  fetchClothes,
 }) => {
   useEffect(() => {
-    clothesRequested();
-    modnikkyService
-      .getClothes()
-      .then((data) => clothesLoaded(data))
-      .catch((err) => clothesError(err));
+    fetchClothes();
   }, []);
 
   if (loading) {
@@ -57,13 +45,14 @@ const mapStateToProps = ({ clothes, loading, error }) => {
   return { clothes, loading, error };
 };
 
-const mapDispatchToProps = {
-  clothesLoaded: clothesLoaded,
-  clothesRequested: clothesRequested,
-  clothesError: clothesError,
-  onItemSelected: (id) => onItemSelected(id),
-  ///search fillter
-  searchClothes: searchClothes,
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const { modnikkyService } = ownProps;
+  return {
+    fetchClothes: fetchClothes(modnikkyService, dispatch),
+    onItemSelected: (id) => dispatch(onItemSelected(id)),
+    ///search fillter
+    searchClothes: searchClothes,
+  };
 };
 export default withModnikkyService()(
   connect(mapStateToProps, mapDispatchToProps)(Goods)

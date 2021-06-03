@@ -54,7 +54,7 @@ export default function TreeViewCategories({
   const buttonsFilterPrice = [
     { name: "<30$", nodeId: "7", labelPrice: "<30$" },
     { name: "30-300$", nodeId: "8", labelPrice: "30-300$" },
-    { name: "300+$", nodeId: "9", labelPrice: "30-300$" },
+    { name: "300+$", nodeId: "9", labelPrice: "300+$" },
   ];
 
   const buttonsPrice = buttonsFilterPrice.map(

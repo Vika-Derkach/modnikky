@@ -1,17 +1,19 @@
+const clothesRequested = () => {
+  return {
+    type: "FETCH_CLOTHES_REQUEST",
+  };
+};
+
 const clothesLoaded = (newClothes) => {
   return {
-    type: "CLOTHES_LOADED",
+    type: "FETCH_CLOTHES_SUCCESS",
     payload: newClothes,
   };
 };
-const clothesRequested = () => {
-  return {
-    type: "BOOKS_REQUESTED",
-  };
-};
+
 const clothesError = (error) => {
   return {
-    type: "CLOTHES_ERROR",
+    type: "FETCH_CLOTHES_FAILURE",
     payload: error,
   };
 };
@@ -70,10 +72,15 @@ const onFilterFabric = (fabricName) => {
     fabricName,
   };
 };
+const fetchClothes = (modnikkyService, dispatch) => () => {
+  dispatch(clothesRequested());
+  modnikkyService
+    .getClothes()
+    .then((data) => dispatch(clothesLoaded(data)))
+    .catch((err) => dispatch(clothesError(err)));
+};
 export {
-  clothesLoaded,
-  clothesRequested,
-  clothesError,
+  fetchClothes,
   onItemSelected,
   productAddedToBag,
   productRemovedFromBag,
