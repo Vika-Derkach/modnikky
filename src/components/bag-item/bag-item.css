@@ -58,3 +58,13 @@
 .quantity-number {
   font-size: 1.1rem;
 }
+@media (max-width: 768px) {
+  .bag-item .bag-item_picture {
+    width: 40%;
+  }
+}
+@media (max-width: 320px) {
+  .bag-item .bag-item_picture {
+    width: 50%;
+  }
+}

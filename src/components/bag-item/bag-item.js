@@ -6,10 +6,6 @@ const BagItem = ({ product, onDelete, onDecrease, onIncrease }) => {
     <div className="bag-item">
       <div className="bag-item_picture">
         <img src={frontPicture} alt="" />
-        {/* <img
-          src="https://cdn.notinoimg.com/detail_thumb/notino/noieliw_kteb10_novy/notino-elite-collection-shopper-bag_.jpg"
-          alt=""
-        /> */}
       </div>
       <div className="bag-item_descr">
         <div className="bag-item_descr__title">{title}</div>

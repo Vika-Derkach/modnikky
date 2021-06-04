@@ -87,3 +87,8 @@
 .footer-col .footer__link:hover {
   color: #8c8c8c;
 }
+@media (max-width: 768px) {
+  .footer-col {
+    flex-wrap: wrap;
+  }
+}

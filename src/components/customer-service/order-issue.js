@@ -9,6 +9,9 @@ import React from "react";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "70%",
+    "@media (max-width:780px)": {
+      width: "95%",
+    },
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),

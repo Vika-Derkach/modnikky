@@ -33,3 +33,13 @@
   letter-spacing: 0.04em;
   color: #000f08;
 }
+@media (max-width: 768px) {
+  .bag {
+    width: 80%;
+  }
+}
+@media (max-width: 320px) {
+  .bag {
+    width: 90%;
+  }
+}
