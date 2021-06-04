@@ -79,8 +79,9 @@ const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
               COLLECTIONS
             </Link>
           </div>
+
           <Link to="/" className={styles.logo}>
-            MODNIKKY
+            <div> MODNIKKY</div>
           </Link>
           <div className={styles.header_right}>
             {/* search fillter */}
@@ -101,6 +102,9 @@ const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
               BAG ({totalItems})
             </Link>
           </div>
+          <Link to="/bag" className={styles.header_link_mobile}>
+            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+          </Link>
         </div>
       </div>
     </Fragment>
