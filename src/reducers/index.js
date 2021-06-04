@@ -170,6 +170,13 @@ const filterFabrics = (items, filter) => {
       return items;
   }
 };
+//scroll to top
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 10,
+    behavior: "smooth",
+  });
+};
 const reducer = (state = initialState, action) => {
   console.log(action.type);
 
@@ -198,6 +205,7 @@ const reducer = (state = initialState, action) => {
         error: action.payload,
       };
     case "ON_ITEM_SELECTED":
+      scrollToTop();
       const clothId = action.payload;
       const cloth = state.clothesFromDb.find((cloth) => cloth.id === clothId);
       const newItem = {
@@ -242,6 +250,7 @@ const reducer = (state = initialState, action) => {
 
     case "SEARCH_CLOTHES":
       ///search fillter
+      scrollToTop();
       const { value = "" } = action;
 
       const { clothesFromDb } = state;
@@ -270,6 +279,7 @@ const reducer = (state = initialState, action) => {
         searchClothesValue: value,
       };
     case "ON_FILTER_CLOTHES":
+      scrollToTop();
       const { clothName = "" } = action;
 
       const filteredClothes = filter(state.clothesFromDb, clothName);
@@ -279,6 +289,7 @@ const reducer = (state = initialState, action) => {
         filterClothes: clothName,
       };
     case "ON_FILTER_SIZE":
+      scrollToTop();
       const { sizeName = "" } = action;
 
       const filteredSized = filter(
@@ -294,6 +305,7 @@ const reducer = (state = initialState, action) => {
       return state;
 
     case "ON_FILTER_PRICE":
+      scrollToTop();
       const { priceName = "" } = action;
 
       const filteredPriced = filter(
@@ -301,7 +313,7 @@ const reducer = (state = initialState, action) => {
           filterPrizes(state.clothesFromDb, priceName),
           state.filterSize
         ),
-        state.filterPrice
+        state.filterClothes
       );
       return {
         ...state,
@@ -309,6 +321,7 @@ const reducer = (state = initialState, action) => {
         filterPrice: priceName,
       };
     case "ON_FILTER_FABRIC":
+      scrollToTop();
       const { fabricName = "" } = action;
 
       const filteredFabric = filter(
@@ -316,7 +329,7 @@ const reducer = (state = initialState, action) => {
           filterFabrics(state.clothesFromDb, fabricName),
           state.filterSize
         ),
-        state.filterFabric
+        state.filterClothes
       );
       return {
         ...state,

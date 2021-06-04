@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Bag from "../bag";
 import CatalogPage from "../catalog-page";
+import CatalogPic from "../catalog-pic";
 import CustomerServicePage from "../customer-service-page";
 import ErrorBoundry from "../error-boundry";
 import Footer from "../footer";
@@ -10,7 +11,6 @@ import { withModnikkyService } from "../hoc";
 import HomePage from "../home-page";
 import InfoPage from "../info-page";
 import InstaShop from "../insta-shop";
-import NewArrivals from "../new-arrivals";
 import ProductPage from "../product-page";
 import ScrollTopArrow from "../scroll-top-arrow";
 import SingUpModal from "../sign-up-modal";
@@ -36,6 +36,12 @@ const App = ({ modnikkyService }) => {
     "It looks like you’ve missed our biggest deal ever and, we’re not going to lie, it really was amazing. But, there’s plenty more to look out for from right now until Black Friday 2021! There is new styles every day from more than 850 of the biggest brands in the world. For a sneak peek at some of the best, head to the New-In edits below. Plus, for discounts all year round, head to the Outlet. You won’t be disappointed.";
   const info_img_blackFriday =
     "https://i2-prod.mirror.co.uk/incoming/article7527164.ece/ALTERNATES/s615/High-Street-shopping.jpg";
+  const info_title_payment = "PAYMENT";
+  const info_text_payment =
+    "Thank you for your buying. We will send you confirmation on gmail. If you have a problem or a question, you can find the answer in the customer service or call our call-assistant. The number is +(380)97-442-2337. You can write us on the gmail queenviktoriyphp@gmail.com. We are happy that you have bought in our shop. You can sign in to get some discount.";
+  const info_img_payment =
+    "https://cariwebs.com/wp-content/uploads/2019/10/payment.jpg";
+
   return (
     <div>
       <ErrorBoundry>
@@ -56,8 +62,18 @@ const App = ({ modnikkyService }) => {
           <Route path="/bag" component={Bag} />
           <Route path="/sign-up" component={SingUpModal} />
           <Route path="/customer-service" component={CustomerServicePage} />
-          <Route path="/new-arrivals" component={NewArrivals} />
+          <Route path="/models" component={CatalogPic} />
           <Route path="/insta-shop" component={InstaShop} />
+          <Route
+            path="/payment"
+            render={() => (
+              <InfoPage
+                info_text={info_text_payment}
+                info_title={info_title_payment}
+                info_img={info_img_payment}
+              />
+            )}
+          />
           <Route
             path="/black-Friday"
             render={() => (

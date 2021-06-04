@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   productAddedToBag,
   productAllRemovedFromBag,
@@ -37,7 +38,9 @@ const Bag = ({
       <div className="payment">
         {" "}
         <div className="bag-total">Total USD ${totalPrice}</div>
-        <ContainedButton button_text={button_text_checkout} />
+        <Link to="/payment">
+          <ContainedButton button_text={button_text_checkout} />
+        </Link>
       </div>
     </div>
   );

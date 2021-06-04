@@ -15,7 +15,7 @@ const SingUpModal = () => {
       text,
     };
   };
-
+  const buttonModalLinkTo = "/";
   return (
     <div className="overlay">
       <div className="popup">
@@ -83,6 +83,7 @@ const SingUpModal = () => {
             </div>
             <Link to="/" className="popup-form__button">
               <ContainedButton
+                buttonLinkTo={buttonModalLinkTo}
                 onAction={sendedMassage()}
                 button_text={button_text}
               />

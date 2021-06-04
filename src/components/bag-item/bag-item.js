@@ -29,7 +29,7 @@ const BagItem = ({ product, onDelete, onDecrease, onIncrease }) => {
             onClick={onIncrease}
             className="button-update button-quantity"
           >
-            <i class="fa fa-plus" aria-hidden="true"></i>
+            <i className="fa fa-plus" aria-hidden="true"></i>
           </button>
         </div>
       </div>

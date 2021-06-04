@@ -4,9 +4,6 @@ import InstaShop from "../insta-shop";
 import NewArrivals from "../new-arrivals";
 import ScreenPic from "../screen-pic";
 import "./home-page.css";
-import pic_dress from "./img/pic-dress.jpg";
-import pic_short from "./img/pic-short.jpg";
-import pic_suit from "./img/pic-suit.jpg";
 import sweater1 from "./img/sweater1.jpg";
 import sweater2 from "./img/sweater2.jpg";
 import sweater3 from "./img/sweater3.jpg";
@@ -52,11 +49,7 @@ const HomePage = () => {
         button={button2}
         buttonLink="/insta-shop"
       />
-      <CatalogPic
-        pic_catal1={pic_dress}
-        pic_catal2={pic_short}
-        pic_catal3={pic_suit}
-      />
+      <CatalogPic />
       <ScreenPic
         screen_pic={screen_pic3}
         title={title_3}

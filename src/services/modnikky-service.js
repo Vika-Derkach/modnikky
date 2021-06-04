@@ -300,6 +300,96 @@ export default class ModnikkyService {
       kind: "shirt",
       size: "S",
     },
+    {
+      id: 21,
+      title: "Bally stripe sweater",
+      price: 330,
+      frontPicture:
+        "https://i.pinimg.com/originals/76/36/9e/76369ebc73aef87d8ecc1b70b5a1ce4d.jpg",
+      additionalPicture:
+        "https://i.pinimg.com/originals/45/51/f9/4551f9853342d9a44101ca98c1571432.jpg",
+      fabric: "COTTON",
+      product_descr:
+        "This lightweight cotton Bally Stripe sweater in bone has a perforated Bally logo to the chest and Bally Stripe details at the cuffs and hem.",
+      color: "WHITE",
+      kind: "knitwear",
+      size: "M",
+    },
+    {
+      id: 22,
+      title: "Beige Fitted jumpsuit with lace top",
+      price: 200,
+      frontPicture:
+        "https://xcdn.next.co.uk/COMMON/Items/Default/Default/ItemImages/AltItemShot/315x472/247935s.jpg",
+      additionalPicture:
+        "https://medias-cache.placedestendances.com/en/phase-eight-fitted-jumpsuit-with-lace-top-beige/image/85/1/2544851.jpg?func=fit&bg_color=white&w=533&h=730",
+      fabric: "LACE",
+      product_descr:
+        "Fitted jumpsuit with lace top by Phase eight for Women. Fabric: Synthetic; Trouser rise: Normal-rise; Pattern: Plain; Occasion: Evening; Fit: Straight cut; Details: Belted",
+      color: "WHITE",
+      kind: "jumpsuit",
+      size: "L",
+    },
+    {
+      id: 23,
+      title: "Women Sexy Lady Brazilian Blue Bottom",
+      price: 15,
+      frontPicture:
+        "https://image.brazilianbikinishop.com/images/products/bottom-lulifama-bottom-mambo-full-blue-0.jpg",
+      additionalPicture:
+        "https://image.brazilianbikinishop.com/images/products/bottom-lulifama-bottom-mambo-full-blue-2.jpg",
+      fabric: "SILK",
+      product_descr:
+        "Keep women always comfortable in summer holiday vacation and give you unique feeling in this fashion swimsuit. The Itsy Bottom,shape,Low rise,Minimal back coverage Ruched back.",
+      color: "BLUE",
+      kind: "bottom",
+      size: "M",
+    },
+    {
+      id: 24,
+      title: "Womens Originals Trefoil Hoodie",
+      price: 310,
+      frontPicture:
+        "https://i.pinimg.com/736x/38/48/f8/3848f870c760aacd6b0b49c7f15acfa3.jpg",
+      additionalPicture:
+        "https://cdn-images.farfetch-contents.com/14/75/10/73/14751073_25289237_1000.jpg",
+      fabric: "COTTON",
+      product_descr:
+        "Practicality and comfort are the words synonymous with our hoodies. Warm up in winter and give your look the originality and individuality. Now it's easier because of such a casual thing in your wardrobe.",
+      color: "RED",
+      kind: "hoodie",
+      size: "M",
+    },
+    {
+      id: 25,
+      title: "Elegant Dark Pink High Low Long Skirts",
+      price: 150,
+      frontPicture:
+        "https://i.pinimg.com/236x/6f/08/83/6f0883c1de4e72eaf08c33fec9bf360e.jpg",
+      additionalPicture:
+        "https://images-na.ssl-images-amazon.com/images/I/51xF%2BWBHUlL._AC_UL1200_.jpg",
+      fabric: "COTTON",
+      product_descr:
+        "In a light pink hue, the Chunky Cord Skirt is a pretty piece for everyday wear. The a-line skirt has a flattering fit with a fixed waistband and lightly flared shape. With a corduroy finish, the skirt has a soft feel. Worn with a simple cotton t-shirt or dressed up with a floral blouse, this skirt has an enduring versatility in your everyday style.",
+      color: "PINK",
+      kind: "shirt",
+      size: "L",
+    },
+    {
+      id: 26,
+      title: "Yellow Cotton Indo Western Dress",
+      price: 130,
+      frontPicture:
+        "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-824,/pub/media/catalog/product/p/v/pvss518_1_f4611434.jpg?rnd=20200526195200",
+      additionalPicture:
+        "https://assets.panashindia.com/media/catalog/product/cache/1/image/479x671/9df78eab33525d08d6e5fb8d27136e95/4/1/415kr13-rp37.jpg",
+      fabric: "COTTON",
+      product_descr:
+        "Featuring a readymade yellow cotton indo western dress crafted with beads work in floral motifs on neck yoke. The dress features round neck and full length sleeves. The maximum length of the dress is 55 inches. Do Note: All Accessories shown are for styling purpose only. Slight color variation may occur due to photographic reasons.",
+      color: "YELLOW",
+      kind: "dress",
+      size: "L",
+    },
   ];
   getClothes() {
     return new Promise((resolve, reject) => {

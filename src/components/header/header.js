@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { Link as ScrollLink } from "react-scroll";
 import { bindActionCreators } from "redux";
 import { searchClothes } from "../../actions";
 import styles from "./header.module.css";
@@ -11,17 +10,8 @@ const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
     <div>
       <div className={styles.header}>
         <div className={styles.header_left}>
-          <Link to="/new-arrivals" className={styles.header_link}>
-            <ScrollLink
-              activeClass="active"
-              to="new_arrivals"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              NEW ARRIVALS
-            </ScrollLink>
+          <Link to="/models" className={styles.header_link}>
+            MODELS
           </Link>
           <Link to="/insta-shop" className={styles.header_link}>
             SHOP
