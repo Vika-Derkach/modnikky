@@ -38,3 +38,11 @@
 .insta-shop_pic .insta-shop_pic__small {
   width: 49%;
 }
+@media (max-width: 768px) {
+  .insta-shop-container {
+    flex-direction: column;
+  }
+  .insta-shop_pic {
+    width: 100%;
+  }
+}

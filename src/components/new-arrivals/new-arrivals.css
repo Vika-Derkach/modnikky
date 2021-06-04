@@ -24,3 +24,19 @@
   text-align: center;
   margin-bottom: 2.2rem;
 }
+@media (max-width: 768px) {
+  .arrivals-container {
+    flex-wrap: wrap;
+  }
+  .arrivals-picture {
+    width: 48%;
+  }
+}
+@media (max-width: 320px) {
+  .arrivals-container {
+    flex-direction: row;
+  }
+  .arrivals-picture {
+    width: 90%;
+  }
+}

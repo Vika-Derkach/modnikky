@@ -29,6 +29,11 @@ const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
         >
           <ul>
             <li>
+              <Link to="/" className={styles.menu_mobile_link}>
+                HOME
+              </Link>
+            </li>
+            <li>
               <Link to="/models" className={styles.menu_mobile_link}>
                 MODELS
               </Link>

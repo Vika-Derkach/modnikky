@@ -35,3 +35,30 @@
   padding-top: 8vh;
   padding-left: 10%;
 }
+@media (max-width: 380px) {
+  .screen_pic1 {
+    background-position: right;
+    padding-top: calc(100vh - 180px);
+    padding-left: 0;
+  }
+  .screen_pic2 {
+    background-position: left;
+    padding-top: calc(100vh - 180px);
+    padding-left: 0;
+  }
+  .screen_pic3 {
+    background-position: bottom;
+    padding-top: calc(100vh - 180px);
+    padding-left: 0;
+  }
+  .screen_pic4 {
+    background-position: center;
+    padding-top: calc(100vh - 180px);
+    padding-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .screen_pic1 {
+    background-position: right;
+  }
+}
