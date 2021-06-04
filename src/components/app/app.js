@@ -12,7 +12,7 @@ import HomePage from "../home-page";
 import InfoPage from "../info-page";
 import InstaShop from "../insta-shop";
 import ProductPage from "../product-page";
-import ScrollTopArrow from "../scroll-top-arrow";
+// import ScrollTopArrow from "../scroll-top-arrow";
 import SingUpModal from "../sign-up-modal";
 import "./app.css";
 const App = ({ modnikkyService }) => {
@@ -46,7 +46,7 @@ const App = ({ modnikkyService }) => {
     <div>
       <ErrorBoundry>
         <Header />
-        <ScrollTopArrow />
+        {/* <ScrollTopArrow /> */}
         <Switch>
           <Route path="/" component={HomePage} exact />
           <Route path="/catalogue" component={CatalogPage} />

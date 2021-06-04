@@ -3,22 +3,27 @@
 }
 .main-text {
   width: 40%;
+  /* background-color: rgba(140, 140, 140, 0.5); */
+  padding: 1rem;
   /* margin: auto; */
 }
 .main-text .main-text__title {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 2.5rem;
   line-height: 2.5rem;
   color: #ffffff;
+  margin-bottom: 1.6rem;
 }
 .main-text .main-text__descr {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.4rem;
   line-height: 1.8rem;
   letter-spacing: 0.04em;
   color: #ffffff;
+  margin-bottom: 2.5rem;
 }
 .main-text .main-text__button {
+  font-weight: 500;
   border: 1px solid white;
   background-color: transparent;
   color: white;
@@ -27,7 +32,7 @@
 }
 .main-text .main-text__button:hover {
   border: 1px solid white;
-  background-color: rgba(56, 79, 88, 0.5);
+  background-color: rgba(37, 37, 37, 0.5);
   color: white;
   outline: none;
 }
