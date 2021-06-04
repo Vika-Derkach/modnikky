@@ -14,7 +14,7 @@ const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
         <a
           onClick={() => setToggleState(!toggleState)}
           className={`${styles.menu_link} ${styles.hidden_menu__mobile} ${
-            toggleState ? `${styles.menu_link_active}` : ``
+            toggleState ? `` : `${styles.menu_link_active}`
           } `}
           href="#menu-mobile"
         >
@@ -24,7 +24,7 @@ const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
         <div
           onClick={() => setToggleState(!toggleState)}
           className={`${styles.menu_mobile} ${
-            toggleState ? `${styles.menu_mobile_active}` : ``
+            toggleState ? `` : `${styles.menu_mobile_active}`
           }`}
         >
           <ul>

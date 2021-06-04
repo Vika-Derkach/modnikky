@@ -23,3 +23,15 @@
 .info .info-img img {
   width: 100%;
 }
+@media (max-width: 768px) {
+  .info {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+@media (max-width: 320px) {
+  .info {
+    width: 80%;
+    margin-left: 10%;
+  }
+}

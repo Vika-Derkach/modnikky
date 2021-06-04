@@ -102,3 +102,14 @@
 .sign-visible {
   display: block;
 }
+@media (max-width: 768px) {
+  .overlay .popup {
+    width: 70%;
+  }
+}
+@media (max-width: 320px) {
+  .overlay .popup {
+    top: 70px;
+    width: 100%;
+  }
+}

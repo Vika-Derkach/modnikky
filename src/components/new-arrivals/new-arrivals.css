@@ -29,14 +29,14 @@
     flex-wrap: wrap;
   }
   .arrivals-picture {
-    width: 48%;
+    width: 49%;
   }
 }
 @media (max-width: 320px) {
   .arrivals-container {
-    flex-direction: row;
+    flex-wrap: wrap;
   }
   .arrivals-picture {
-    width: 90%;
+    width: 49%;
   }
 }

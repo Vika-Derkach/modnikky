@@ -26,15 +26,10 @@ const ProductSection = ({ items, onAddedToBag, price, onItemSelected }) => {
         return (
           <div key={id} className="product-section">
             <div className="product-section_picture">
-              <img src={frontPicture} alt="" />
-              {/* "https://i.pinimg.com/736x/05/da/14/05da143bb08929bc209598c319ec2ce2.jpg" */}
+              <img src={frontPicture} alt="front" />
             </div>
             <div className="product-section_picture">
-              {/* <img
-                src="https://i.pinimg.com/originals/24/11/72/2411729f35288ffa12641f60980a1f49.jpg"
-                alt=""
-              /> */}
-              <img src={additionalPicture} alt="" />
+              <img src={additionalPicture} alt="additional" />
             </div>
             <div className="product-section_text">
               <div className="product-section_text__title">{title}</div>

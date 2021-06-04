@@ -19,3 +19,25 @@
   padding-top: 20%;
   padding-left: 7%;
 }
+@media (max-width: 768px) {
+  .complete-look-container {
+    flex-wrap: wrap;
+  }
+  .complete-look-picture {
+    width: 49%;
+  }
+  .complete-look-picture__text {
+    width: 80%;
+    padding-top: 0;
+    text-align: center;
+    margin-bottom: 1.6rem;
+  }
+}
+@media (max-width: 320px) {
+  .complete-look-container {
+    flex-direction: column;
+  }
+  .complete-look-picture {
+    width: 100%;
+  }
+}
