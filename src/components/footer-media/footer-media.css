@@ -1,0 +1,13 @@
+.footer-media {
+  display: flex;
+  flex-direction: column;
+}
+.footer__link {
+  text-decoration: none;
+  color: #000f08;
+  margin-bottom: 1.6rem;
+}
+.footer__link:hover {
+  color: #8c8c8c;
+  text-decoration: none;
+}

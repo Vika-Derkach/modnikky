@@ -7,7 +7,12 @@ import styles from "./header.module.css";
 
 const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
   const [toggleState, setToggleState] = useState(true);
-
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 10,
+      behavior: "smooth",
+    });
+  };
   return (
     <Fragment>
       <section className={styles.menu_mobile_main}>
@@ -29,40 +34,68 @@ const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
         >
           <ul>
             <li>
-              <Link to="/" className={styles.menu_mobile_link}>
+              <Link
+                to="/"
+                onClick={scrollToTop}
+                className={styles.menu_mobile_link}
+              >
                 HOME
               </Link>
             </li>
             <li>
-              <Link to="/models" className={styles.menu_mobile_link}>
+              <Link
+                to="/models"
+                onClick={scrollToTop}
+                className={styles.menu_mobile_link}
+              >
                 MODELS
               </Link>
             </li>
             <li>
-              <Link to="/insta-shop" className={styles.menu_mobile_link}>
+              <Link
+                to="/insta-shop"
+                onClick={scrollToTop}
+                className={styles.menu_mobile_link}
+              >
                 {" "}
                 SHOP
               </Link>{" "}
             </li>
             <li>
-              <Link to="/catalogue" className={styles.menu_mobile_link}>
+              <Link
+                to="/catalogue"
+                onClick={scrollToTop}
+                className={styles.menu_mobile_link}
+              >
                 COLLECTIONS
               </Link>{" "}
             </li>
             <li>
-              <Link to="/sign-up" className={styles.menu_mobile_link}>
+              <Link
+                to="/sign-up"
+                onClick={scrollToTop}
+                className={styles.menu_mobile_link}
+              >
                 {" "}
                 SIGN IN
               </Link>
             </li>
             <li>
-              <Link to="/bag" className={styles.menu_mobile_link}>
+              <Link
+                to="/bag"
+                onClick={scrollToTop}
+                className={styles.menu_mobile_link}
+              >
                 BAG
               </Link>{" "}
             </li>
             <li>
               {" "}
-              <Link to="/customer-service" className={styles.menu_mobile_link}>
+              <Link
+                to="/customer-service"
+                onClick={scrollToTop}
+                className={styles.menu_mobile_link}
+              >
                 {" "}
                 SERVICE
               </Link>{" "}
@@ -107,8 +140,11 @@ const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
               BAG ({totalItems})
             </Link>
           </div>
+          <Link to="/catalogue" className={styles.header_link_mobile}>
+            <i className="fa fa-search" aria-hidden="true"></i>
+          </Link>
           <Link to="/bag" className={styles.header_link_mobile}>
-            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            <i className="fa fa-shopping-bag" aria-hidden="true"></i>
           </Link>
         </div>
       </div>

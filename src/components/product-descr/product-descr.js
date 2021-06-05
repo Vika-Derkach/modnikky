@@ -7,7 +7,7 @@ import React from "react";
 import "./product-descr.css";
 const useStyles = makeStyles({
   root: {
-    height: 416,
+    height: "auto",
     flexGrow: 1,
     maxWidth: 400,
     fontSize: 54,

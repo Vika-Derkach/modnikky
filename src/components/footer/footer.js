@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
+import FooterMedia from "../footer-media";
 import "./footer.css";
 const Footer = () => {
   const scrollToTop = () => {
@@ -26,6 +27,7 @@ const Footer = () => {
           <button className="footer-text__form_button">JOIN</button>
         </form>
       </div>
+      <FooterMedia scrollToTop={scrollToTop} />
       <div className="footer-col">
         <div className="footer-service">
           <Link

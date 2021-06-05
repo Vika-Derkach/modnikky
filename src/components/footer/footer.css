@@ -87,8 +87,16 @@
 .footer-col .footer__link:hover {
   color: #8c8c8c;
 }
+.footer-media_block {
+  display: none;
+}
 @media (max-width: 768px) {
   .footer-col {
     flex-wrap: wrap;
+  }
+}
+@media (max-width: 320px) {
+  .footer-col {
+    display: none;
   }
 }

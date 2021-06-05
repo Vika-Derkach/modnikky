@@ -41,7 +41,13 @@ const App = ({ modnikkyService }) => {
     "Thank you for your buying. We will send you confirmation on gmail. If you have a problem or a question, you can find the answer in the customer service or call our call-assistant. The number is +(380)97-442-2337. You can write us on the gmail queenviktoriyphp@gmail.com. We are happy that you have bought in our shop. You can sign in to get some discount.";
   const info_img_payment =
     "https://cariwebs.com/wp-content/uploads/2019/10/payment.jpg";
-
+  let sizePictue;
+  if (window.matchMedia("(max-width: 320px)").matches) {
+    sizePictue =
+      "https://admin.stelly.com.au/img/cms/size%20chart/size-chart.jpg";
+  } else {
+    sizePictue = "https://mmswua.com/image/catalog/gid.jpg";
+  }
   return (
     <div>
       <ErrorBoundry>
@@ -119,10 +125,7 @@ const App = ({ modnikkyService }) => {
             path="/size-guide"
             render={() => (
               <div className="size-page">
-                <img
-                  src="https://mmswua.com/image/catalog/gid.jpg"
-                  alt="size"
-                />{" "}
+                <img src={sizePictue} alt="size" />{" "}
               </div>
             )}
           />
