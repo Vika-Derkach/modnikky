@@ -116,10 +116,11 @@ const Header = ({ totalItems }) => {
               COLLECTIONS
             </Link>
           </div>
-
-          <Link to="/" className={styles.logo}>
-            <div> MODNIKKY</div>
-          </Link>
+          <div>
+            <Link to="/" className={styles.logo}>
+              <div> MODNIKKY</div>
+            </Link>
+          </div>
           <div className={styles.header_right}>
             <Link to="/catalogue" className={styles.header_right__search}>
               <SearchInput />
@@ -131,13 +132,15 @@ const Header = ({ totalItems }) => {
             <Link to="/bag" className={styles.header_link}>
               BAG ({totalItems})
             </Link>
+            <div className={styles.media_icon}>
+              <Link to="/catalogue" className={styles.header_link_mobile}>
+                <i className="fa fa-search" aria-hidden="true"></i>
+              </Link>
+              <Link to="/bag" className={styles.header_link_mobile}>
+                <i className="fa fa-shopping-bag" aria-hidden="true"></i>
+              </Link>
+            </div>
           </div>
-          <Link to="/catalogue" className={styles.header_link_mobile}>
-            <i className="fa fa-search" aria-hidden="true"></i>
-          </Link>
-          <Link to="/bag" className={styles.header_link_mobile}>
-            <i className="fa fa-shopping-bag" aria-hidden="true"></i>
-          </Link>
         </div>
       </div>
     </Fragment>

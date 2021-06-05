@@ -10,8 +10,6 @@
 .bag-modal-overlay .bag-modal-popup {
   position: fixed;
   left: 100%;
-  /* right: 10%; */
-  /* top: 100px; */
   width: 25%;
   height: 100%;
   transform: translateX(-100%);

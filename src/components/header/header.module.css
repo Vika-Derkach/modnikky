@@ -54,6 +54,10 @@
 .header_link_mobile:hover {
   color: #8c8c8c;
 }
+.media_icon {
+  display: flex;
+  flex-direction: row;
+}
 @media (max-width: 768px) {
   .logo {
     width: 20%;

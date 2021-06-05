@@ -11,7 +11,11 @@ const InstaShop = () => {
     <Element className="insta-shop" name="insta-shop">
       <div className="insta-shop__title">
         IMSTAGRAM{" "}
-        <a href="https://instagram.com/midnight_custom?igshid=1auy6xgqfup8n">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://instagram.com/midnight_custom?igshid=1auy6xgqfup8n"
+        >
           SHOP{" "}
         </a>{" "}
       </div>

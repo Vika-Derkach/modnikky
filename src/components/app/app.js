@@ -5,6 +5,7 @@ import Footer from "../footer";
 import Header from "../header";
 import { withModnikkyService } from "../hoc";
 import ScrollTopArrow from "../scroll-top-arrow";
+import Spinner from "../spinner";
 import "./app.css";
 
 const Bag = lazy(() => import("../bag"));
@@ -55,7 +56,7 @@ const App = () => {
       <ErrorBoundry>
         <Header />
         <ScrollTopArrow />
-        <Suspense fallback={<div>Загрузка...</div>}>
+        <Suspense fallback={<Spinner />}>
           <Switch>
             <Route path="/" component={HomePage} exact />
             <Route path="/catalogue" component={CatalogPage} />

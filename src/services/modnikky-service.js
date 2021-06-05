@@ -372,7 +372,7 @@ export default class ModnikkyService {
       product_descr:
         "In a light pink hue, the Chunky Cord Skirt is a pretty piece for everyday wear. The a-line skirt has a flattering fit with a fixed waistband and lightly flared shape. With a corduroy finish, the skirt has a soft feel. Worn with a simple cotton t-shirt or dressed up with a floral blouse, this skirt has an enduring versatility in your everyday style.",
       color: "PINK",
-      kind: "shirt",
+      kind: "skirt",
       size: "L",
     },
     {
