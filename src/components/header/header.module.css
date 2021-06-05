@@ -30,15 +30,6 @@
   width: 30%;
   margin-top: 5px;
 }
-.header_right__search {
-  border: none;
-  width: 30%;
-  outline: none;
-  transition: 0.2s;
-}
-.header_right__search:focus {
-  border-bottom: #d8d8d8 1px solid;
-}
 .header_link {
   text-decoration: none;
   margin-right: 3rem;

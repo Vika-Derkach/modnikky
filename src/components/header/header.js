@@ -1,11 +1,10 @@
 import React, { Fragment, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { bindActionCreators } from "redux";
-import { searchClothes } from "../../actions";
+import SearchInput from "../search-input";
 import styles from "./header.module.css";
 
-const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
+const Header = ({ totalItems }) => {
   const [toggleState, setToggleState] = useState(true);
   const scrollToTop = () => {
     window.scrollTo({
@@ -122,15 +121,8 @@ const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
             <div> MODNIKKY</div>
           </Link>
           <div className={styles.header_right}>
-            {/* search fillter */}
-            <Link to="/catalogue">
-              <input
-                className={styles.header_right__search}
-                type="text"
-                placeholder="SEARCH"
-                value={searchValue}
-                onChange={(e) => searchClothes(e.target.value)}
-              />
+            <Link to="/catalogue" className={styles.header_right__search}>
+              <SearchInput />
             </Link>
             <Link to="/sign-up" className={styles.header_link}>
               SIGN IN
@@ -151,14 +143,10 @@ const Header = ({ totalItems, searchClothes, searchValue, myRef }) => {
     </Fragment>
   );
 };
-const mapStateToProps = ({ orderTotal, searchClothesValue, clothes }) => {
+const mapStateToProps = ({ orderTotal }) => {
   return {
     totalItems: orderTotal,
-    ///search fillter
-    searchValue: searchClothesValue,
   };
 };
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ searchClothes }, dispatch);
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+
+export default connect(mapStateToProps)(Header);

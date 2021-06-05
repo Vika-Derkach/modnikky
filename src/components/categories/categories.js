@@ -7,6 +7,7 @@ import {
   onFilterSize,
 } from "../../actions";
 import CategoriesClothesFilter from "../categories-clothes-filter";
+import SearchInput from "../search-input";
 import TreeViewCategories from "../tree-view-categories";
 import "./categories.css";
 const Categories = ({
@@ -20,6 +21,9 @@ const Categories = ({
   return (
     <div className="categories">
       <h2>Categories</h2>
+      <div className="categories-media_input">
+        <SearchInput />
+      </div>
       <div className="categories-container">
         <CategoriesClothesFilter
           filterClothes={filterClothes}
