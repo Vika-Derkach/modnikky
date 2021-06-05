@@ -51,6 +51,7 @@
   margin: 5px 2px;
   background-color: #fff;
   outline: none;
+  transition: 0.2s;
 }
 .footer-text__form .footer-text__form_button:hover {
   outline: none;
@@ -86,6 +87,7 @@
 }
 .footer-col .footer__link:hover {
   color: #8c8c8c;
+  transition: 0.2s;
 }
 .footer-media_block {
   display: none;

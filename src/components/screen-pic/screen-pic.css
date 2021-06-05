@@ -27,6 +27,7 @@
   color: white;
   padding: 1rem 2.5rem;
   outline: none;
+  transition: 0.2s;
 }
 .main-text .main-text__button:hover {
   border: 1px solid white;

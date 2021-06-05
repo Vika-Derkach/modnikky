@@ -1,21 +1,23 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
-import Bag from "../bag";
-import CatalogPage from "../catalog-page";
-import CatalogPic from "../catalog-pic";
-import CustomerServicePage from "../customer-service-page";
 import ErrorBoundry from "../error-boundry";
 import Footer from "../footer";
 import Header from "../header";
 import { withModnikkyService } from "../hoc";
-import HomePage from "../home-page";
-import InfoPage from "../info-page";
-import InstaShop from "../insta-shop";
-import ProductPage from "../product-page";
 import ScrollTopArrow from "../scroll-top-arrow";
-import SingUpModal from "../sign-up-modal";
 import "./app.css";
-const App = ({ modnikkyService }) => {
+
+const Bag = lazy(() => import("../bag"));
+const CatalogPage = lazy(() => import("../catalog-page"));
+const CatalogPic = lazy(() => import("../catalog-pic"));
+const CustomerServicePage = lazy(() => import("../customer-service-page"));
+const HomePage = lazy(() => import("../home-page"));
+const InfoPage = lazy(() => import("../info-page"));
+const InstaShop = lazy(() => import("../insta-shop"));
+const ProductPage = lazy(() => import("../product-page"));
+const SingUpModal = lazy(() => import("../sign-up-modal"));
+
+const App = () => {
   const info_title_about = "Who we are";
   const info_text_about =
     "We believe in a world where you have total freedom to be you, without judgement. To experiment. To express yourself. To be brave and grab life as the extraordinary adventure it is. So we make sure everyone has an equal chance to discover all the amazing things they’re capable of – no matter who they are, where they’re from or what looks they like to boss. We exist to give you the confidence to be whoever you want to be.";
@@ -53,95 +55,96 @@ const App = ({ modnikkyService }) => {
       <ErrorBoundry>
         <Header />
         <ScrollTopArrow />
-        <Switch>
-          <Route path="/" component={HomePage} exact />
-          <Route path="/catalogue" component={CatalogPage} />
-          <Route path="/product" exact component={ProductPage} />
-          <Route
-            path="/product/:id"
-            render={({ match }) => {
-              const { id } = match.params;
+        <Suspense fallback={<div>Загрузка...</div>}>
+          <Switch>
+            <Route path="/" component={HomePage} exact />
+            <Route path="/catalogue" component={CatalogPage} />
+            <Route path="/product" exact component={ProductPage} />
+            <Route
+              path="/product/:id"
+              render={({ match }) => {
+                const { id } = match.params;
 
-              return <ProductPage itemId={id} />;
-            }}
-          />
-          <Route path="/bag" component={Bag} />
-          <Route path="/sign-up" component={SingUpModal} />
-          <Route path="/customer-service" component={CustomerServicePage} />
-          <Route path="/models" component={CatalogPic} />
-          <Route path="/insta-shop" component={InstaShop} />
-          <Route
-            path="/payment"
-            render={() => (
-              <InfoPage
-                info_text={info_text_payment}
-                info_title={info_title_payment}
-                info_img={info_img_payment}
-              />
-            )}
-          />
-          <Route
-            path="/black-Friday"
-            render={() => (
-              <InfoPage
-                info_text={info_text_blackFriday}
-                info_title={info_title_blackFriday}
-                info_img={info_img_blackFriday}
-              />
-            )}
-          />
+                return <ProductPage itemId={id} />;
+              }}
+            />
+            <Route path="/bag" component={Bag} />
+            <Route path="/sign-up" component={SingUpModal} />
+            <Route path="/customer-service" component={CustomerServicePage} />
+            <Route path="/models" component={CatalogPic} />
+            <Route path="/insta-shop" component={InstaShop} />
+            <Route
+              path="/payment"
+              render={() => (
+                <InfoPage
+                  info_text={info_text_payment}
+                  info_title={info_title_payment}
+                  info_img={info_img_payment}
+                />
+              )}
+            />
+            <Route
+              path="/black-Friday"
+              render={() => (
+                <InfoPage
+                  info_text={info_text_blackFriday}
+                  info_title={info_title_blackFriday}
+                  info_img={info_img_blackFriday}
+                />
+              )}
+            />
 
-          <Route
-            path="/culture"
-            render={() => (
-              <InfoPage
-                info_text={info_text_culture}
-                info_title={info_title_culture}
-                info_img={info_img_culture}
-              />
-            )}
-          />
-          <Route
-            path="/career"
-            render={() => (
-              <InfoPage
-                info_text={info_text_career}
-                info_title={info_title_career}
-                info_img={info_img_career}
-              />
-            )}
-          />
-          <Route
-            path="/about-us"
-            render={() => (
-              <InfoPage
-                info_text={info_text_about}
-                info_title={info_title_about}
-                info_img={info_img_about}
-              />
-            )}
-          />
-          <Route
-            path="/size-guide"
-            render={() => (
-              <div className="size-page">
-                <img src={sizePictue} alt="size" />{" "}
-              </div>
-            )}
-          />
+            <Route
+              path="/culture"
+              render={() => (
+                <InfoPage
+                  info_text={info_text_culture}
+                  info_title={info_title_culture}
+                  info_img={info_img_culture}
+                />
+              )}
+            />
+            <Route
+              path="/career"
+              render={() => (
+                <InfoPage
+                  info_text={info_text_career}
+                  info_title={info_title_career}
+                  info_img={info_img_career}
+                />
+              )}
+            />
+            <Route
+              path="/about-us"
+              render={() => (
+                <InfoPage
+                  info_text={info_text_about}
+                  info_title={info_title_about}
+                  info_img={info_img_about}
+                />
+              )}
+            />
+            <Route
+              path="/size-guide"
+              render={() => (
+                <div className="size-page">
+                  <img src={sizePictue} alt="size" />{" "}
+                </div>
+              )}
+            />
 
-          <Route
-            render={() => (
-              <div className="mistake-page">
-                <img
-                  src="https://blog.thomasnet.com/hs-fs/hubfs/shutterstock_774749455.jpg?width=600&name=shutterstock_774749455.jpg"
-                  alt="404"
-                />{" "}
-              </div>
-            )}
-          />
-        </Switch>
-
+            <Route
+              render={() => (
+                <div className="mistake-page">
+                  <img
+                    src="https://blog.thomasnet.com/hs-fs/hubfs/shutterstock_774749455.jpg?width=600&name=shutterstock_774749455.jpg"
+                    alt="404"
+                  />{" "}
+                </div>
+              )}
+            />
+          </Switch>
+        </Suspense>
         <Footer />
       </ErrorBoundry>
     </div>

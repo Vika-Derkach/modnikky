@@ -19,6 +19,7 @@
 
 .scrollTop:hover {
   opacity: 1;
+  transition: 0.2s;
 }
 
 @keyframes fadeIn {

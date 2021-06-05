@@ -6,8 +6,8 @@ import "./search-input.css";
 const SearchInput = ({ searchClothes, searchValue }) => {
   return (
     <Fragment>
-      <span class="input-loop">
-        <i class="fa fa-search" aria-hidden="true"></i>
+      <span className="input-loop">
+        <i className="fa fa-search" aria-hidden="true"></i>
       </span>
       <input
         type="text"

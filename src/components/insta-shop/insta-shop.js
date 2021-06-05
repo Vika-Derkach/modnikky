@@ -10,7 +10,7 @@ const InstaShop = () => {
   return (
     <Element className="insta-shop" name="insta-shop">
       <div className="insta-shop__title">
-        SHOP IMSTAGRAM{" "}
+        IMSTAGRAM{" "}
         <a href="https://instagram.com/midnight_custom?igshid=1auy6xgqfup8n">
           SHOP{" "}
         </a>{" "}

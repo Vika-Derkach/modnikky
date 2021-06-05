@@ -7,22 +7,13 @@
 .search-input:focus {
   border-bottom: #d8d8d8 1px solid;
 }
-/* @media (max-width: 320px) {
-  .categories h2 {
-    text-align: center;
-  }
-  .categories .categories-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .filters-categories {
-    display: none;
-  }
-  .categories-media_input {
-    margin-left: 10%;
-  }
-} */
+.fa-search {
+  color: #000f08;
+  transition: 0.2s;
+}
+.fa-search:hover {
+  color: #8c8c8c;
+}
 @media (max-width: 768px) {
   .search-input {
     width: 90%;

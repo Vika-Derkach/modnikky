@@ -10,4 +10,5 @@
 .footer__link:hover {
   color: #8c8c8c;
   text-decoration: none;
+  transition: 0.2s;
 }

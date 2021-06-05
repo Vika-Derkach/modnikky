@@ -13,6 +13,7 @@
   line-height: 2.9rem;
   color: #000f08;
   align-items: center;
+  transition: 0.2s;
 }
 .logo:hover {
   text-decoration: none;
@@ -43,6 +44,7 @@
 .header_link:hover {
   color: #8c8c8c;
   text-decoration: none;
+  transition: 0.2s;
 }
 .header_link_mobile {
   display: none;
