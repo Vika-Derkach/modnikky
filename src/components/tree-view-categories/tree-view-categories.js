@@ -9,6 +9,11 @@ import "./tree-view-categories.css";
 const useStyles = makeStyles({
   root: {
     height: 216,
+    "@media (max-width:320px)": {
+      display: "flex",
+      height: "auto",
+      justifyContent: "space-evenly",
+    },
     flexGrow: 1,
     maxWidth: 400,
   },

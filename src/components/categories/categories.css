@@ -12,7 +12,6 @@
   font-weight: 500;
   font-size: 1rem;
   line-height: 1rem;
-  /* color: #000f08; */
   background-color: #fff;
   border: none;
   text-align: left;
@@ -38,4 +37,17 @@
   font-size: 1rem;
   line-height: 1rem;
   color: #8c8c8c;
+}
+@media (max-width: 320px) {
+  .categories h2 {
+    text-align: center;
+  }
+  .categories .categories-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .filters-categories {
+    display: none;
+  }
 }

@@ -10,3 +10,15 @@
   width: 79%;
   padding-top: 1.5rem;
 }
+@media (max-width: 320px) {
+  .catalog-page-container {
+    flex-direction: column;
+  }
+  .catalog-page-container .catalog-page-categories {
+    width: 90%;
+  }
+  .catalog-page-container .catalog-page-goods {
+    width: 95%;
+    text-align: center;
+  }
+}
